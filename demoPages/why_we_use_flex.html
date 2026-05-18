@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    .container {
+      background: #f0f0f0;
+      padding: 10px;
+      font-size: 0; /* hack to remove inline block whitespace */
+    }
+
+    .item {
+      display: inline-block;
+      width: calc(33.33% - 10px); /* manual maths */
+      margin-right: 10px;
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 16px; /* restore text size */
+      vertical-align: top;
+    }
+
+    /* Remove margin on last item */
+    .item:last-child {
+      margin-right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
