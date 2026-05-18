@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>QA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+            width: 10em;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope, $http) {
+            $scope.films = null;
+
+            $scope.filmClick = function () {
+                $http({
+                    method: "Get", url: 'http://www.omdbapi.com/?apikey=ef5e4257&s=' + $scope.filmName
+                }).then(function (response) {
+                    let data = response.data;
+                    $scope.films = data.Search;
+                });
+            }
+        }
+        myModule.controller("myController", myController);
+    </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <input type="text" ng-model='filmName' />
+    <button ng-click='filmClick()'>Go!</button>
+    <h1 ng-hide="films == null">Here are the films that include {{filmName}}</h1>
+    <ol>
+        <li ng-repeat="film in films">
+            <h3>{{film.Title}}</h3>
+            <img src={{film.Poster}} />
+        </li>
+    </ol>
+</body>

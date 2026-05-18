@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        thead {
+            flex: 0 0 auto;
+        }
+
+        tbody {
+            height: 250px;
+            display: block;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        tr {
+            width: 50%;
+            display:table;
+            table-layout: fixed;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('app1', []).controller('controller1', function ($scope, $http) {
+            $http({
+                method: "Get", url: 'http://localhost:5000/getcustomers'
+            }).then(function (response) {
+                $scope.customers = response.data;
+            });
+        });
+    </script>
+</head>
+
+<body ng-app="app1" ng-controller="controller1">
+
+    <input type="text" ng-model="searchString" />
+    Sort by:
+    <select ng-model="sortBy">
+        <option value="CustomerID">Customer ID</option>
+        <option value="ContactName">Contact name</option>
+        <option value="City">City</option>
+    </select>
+    <table class="table table-striped table-bordered table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th ng-click="sortBy='ContactName'">Contact name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cus in customers | limitTo:10 | orderBy:sortBy | filter:searchString">
+                <td> {{cus.CustomerID}}</td>
+                <td>{{cus.ContactName}}</td>
+                <td>{{cus.City}}</td>
+        </tbody>
+    </table>
+</body>
+
+</html>

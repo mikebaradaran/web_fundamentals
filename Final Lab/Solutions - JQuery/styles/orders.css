@@ -1,0 +1,20 @@
+﻿html, body, .fullHeight {
+    height:100%
+}
+
+.halfHeight {
+    max-height: 50%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.link {
+     cursor:pointer;
+     color:blue;
+     text-decoration:underline;
+}
+
+.link:hover {
+     text-decoration:none;
+     text-shadow: 1px 1px 1px #555;
+}

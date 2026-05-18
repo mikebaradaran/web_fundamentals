@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('app1', []).controller('controller1', function ($scope, $http) {
+            $http({
+                method: "Get", url: 'http://localhost:5000/customers'
+            }).then(function (response) {
+                $scope.customers = response.data;
+            });
+
+            $scope.students = [
+                { name: "David",  course: "C#" },
+                { name: "Linda",  course: "Java" },
+                { name: "Sasha",  course: "Marketing" },
+                { name: "Sean",   course: "Networking" },
+                { name: "Chris",  course: "Networking" }
+            ];
+            $scope.searchString = "";
+        });
+    </script>
+</head>
+
+<body ng-app="app1" ng-controller="controller1">
+    <input type="text" ng-model="searchString" />
+    <table border="1">
+        <tr ng-repeat="stu in students | filter:searchString">
+            <td>{{stu.name}}</td>
+            <td>{{stu.course}}</td>
+        </tr>
+    </table>
+    <hr/>
+    <table border="1">
+        <tr ng-repeat="stu in students | orderBy:'name' | filter:searchString">
+            <td>{{stu.name}}</td>
+            <td>{{stu.course}}</td>
+        </tr>
+    </table>
+</body>
+</html>

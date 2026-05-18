@@ -1,0 +1,29 @@
+<style>
+.container {
+  display: flex;          /* turns the div into a flex container */
+  gap: 10px;              /* space between items */
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+.item {
+  background: #4CAF50;
+  color: white;
+  padding: 20px;
+  flex: 1;                /* each item takes equal width */
+  text-align: center;
+}
+</style>
+
+<div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+
+<h3>Explanation</h3>
+<pre>
+<b>display: flex</b>  enables flex layout
+<b>flex: 1</b>        all items grow equally to fill the container
+<b>gap</b>            spacing between items
+</pre>

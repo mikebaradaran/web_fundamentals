@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope) {
+            $scope.message = "Hello World!";
+            $scope.doClick = ()=> {
+                alert($scope.choice);
+            }
+            $scope.doSet = function () {
+                $scope.choice = "City";
+                $scope.drink = "coffee";
+                $scope.yesNo = true;
+                $scope.username = "Mike";
+            }
+        }
+        myModule.controller("myController", myController);
+
+    </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <h2>{{ message }}</h2>
+    Name: <input type="text" ng-model="username" />
+    <hr />
+    <select ng-model="choice" size="5">
+        <option>Name</option>
+        <option>Company</option>
+        <option>Country</option>
+        <option>City</option>
+    </select>
+    <hr />
+    Tea<input type="radio" value="tea" ng-model="drink" />
+    Coffee<input type="radio" value="coffee" ng-model="drink" />
+    Cola<input type="radio" value="cola" ng-model="drink" />
+    <hr />
+
+    Yes/No<input type="checkbox" ng-model="yesNo" />
+    <hr />
+    <div>List:{{choice}}</div>
+    <div>Drink:{{drink}}</div>
+    <div>Yes:{{yesNo}}</div>
+    <div>User name:{{username}}</div>
+    <hr />
+    <button ng-click="doClick()">OK</button>
+    <button ng-click="doSet()">Set by code</button>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .app {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "sidebar content";
+    gap: 10px;
+  }
+
+  .sidebar { grid-area: sidebar; background: teal; padding: 20px; color: white; }
+  .content { grid-area: content; background: tomato; padding: 20px; color: white; }
+
+  @media (max-width: 800px) {
+    .app {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "content"
+        "sidebar";
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="sidebar">Sidebar</div>
+  <div class="content">Content</div>
+</div>
+
+</body>
+</html>

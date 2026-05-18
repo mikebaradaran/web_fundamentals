@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope, $http) {
+            $http({
+                method: "Get", url: 'http://localhost:5000/customers'
+            }).then(function (response) {
+                $scope.customers = response.data;
+            }, function (reason) {
+                $scope.error = "Unable to show customers data";
+            });
+
+            $scope.showOrders = function (cus) {
+                let id = cus.CustomerID;
+                $http({
+                    method: "Get", url: 'http://localhost:5000/ordersByCustomerid/'+id
+                }).then(function (response) {
+                    $scope.orders = response.data;
+                }, function (reason) {
+                    $scope.error = "Unable to show customer's orders";
+                });
+            }
+        }
+        myModule.controller("myController", myController);
+
+    </script>
+    <style>
+        table {
+            display: block;
+            height: 200px;
+            width: 48%;
+            overflow: auto;
+            float:left;
+        }
+    </style>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+
+    <table border="1">
+        <tr ng-repeat="cus in customers" ng-click="showOrders(cus)">
+            <td>{{cus.CustomerID}}</td>
+            <td>{{cus.ContactName}}</td>
+            <td>{{cus.City}}</td>
+            <td>{{cus.Country}}</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr ng-repeat="ord in orders">
+            <td>{{ord.CustomerID}}</td>
+            <td>{{ord.OrderID}}</td>
+            <td>{{ord.EmployeeID}}</td>
+            <td>{{ord.ShipCountry}}</td>
+            <td>{{ord.Freight}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

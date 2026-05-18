@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/orders.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/orders.css" />
+    <title>Orders</title>
+    <meta charset="utf-8" />
+</head>
+
+<body ng-app="Orders" ng-controller="ordersController">
+    <div class="fullHeight">
+        <!-- Orders -->
+        <h2>List of Customers</h2>
+        <div>{{message}}</div>
+        <div class="halfHeight" ng-hide="customers==null">
+            <table>
+                <thead>
+                    <tr>
+                        <th>CustomerID</th>
+                        <th>ContactName</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="customer in customers" ng-click="customerClicked(customer)">
+                        <td>{{customer.CustomerID}}</td>
+                        <td>{{customer.ContactName}}</td>
+                        <td>{{customer.City}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Orders -->
+        <div ng-hide="orders==null">
+            <h3>Orders for customer ID: {{customerID}}</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Employee ID</th>
+                        <th>Ship Country</th>
+                        <th>Freight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="order in orders">
+                        <td>{{order.OrderID}}</td>
+                        <td>{{order.EmployeeID}}</td>
+                        <td>{{order.ShipCountry}}</td>
+                        <td>{{order.Freight}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<style>
+.wrapper {
+  width: 60%;
+  margin: auto;
+  border: 2px dashed #ccc;
+  resize: horizontal;
+  overflow: auto;
+  container-type: inline-size; /* <-- define the container */
+}
+
+.card {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+/* When the wrapper (container) is at least 400px wide */
+@container (min-width: 400px) {
+  .card {
+    background: #d8f5d0; /* light green */
+  }
+}
+</style>
+
+<div class="wrapper">
+  <div class="card">
+    <h2>Container Query Demo</h2>
+    <p>Drag the right edge of the box to resize it.  
+       When the container reaches 400px wide, the background changes.</p>
+  </div>
+</div>

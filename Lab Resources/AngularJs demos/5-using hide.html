@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('app1', [])
+            .controller('controller1', function ($scope) {
+                $scope.hideDOB = false;
+                $scope.students = [
+                { name: "David",  age:21, course: "C#" },
+                { name: "Linda",  age:20, course: "Java" },
+                { name: "Sasha",  age:27, course: "Marketing" },
+                { name: "Sean",   age:32, course: "Networking" },
+                { name: "Chris",  age:34, course: "Security" }
+            ];
+        });
+    </script>
+</head>
+
+<body ng-app="app1" ng-controller="controller1">
+    <input type="checkbox" ng-model="hideDOB"/>Hide DOB
+    <table border="1">
+        <tr ng-repeat="stu in students">
+            <td>{{stu.name}}</td>
+            <td ng-hide="hideDOB">{{stu.age}}</td>
+            <td>{{stu.course}}</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="products">
+<head>
+    <title>QA Store</title>
+    <meta charset="utf-8" />
+
+    <script src="scripts/angular.js"></script>
+    <script src="ProductController.js"></script>
+    <link rel="stylesheet" href="style.css" /> 
+</head>
+<body>
+    <ul>
+        <li><a href="#!/">Home</a></li>
+        <li><a href="#!/main">Main page</a></li>
+        <li><a href="#!/about">About</a></li>
+    </ul>
+
+    <!-- The main application starts here -->
+    <div ng-controller="myController">
+        <h2>Product List</h2>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Date Re-Ordered</th>
+            </tr>
+            <tr ng-repeat="prod in products">
+                <td>{{prod.name}}</td>
+                <td>{{prod.unitPrice | currency:'£'}}</td>
+                <td>{{prod.stockLevel}}</td>
+                <td>{{prod.dateReordered | date:'dd MMM yyyy'}}</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

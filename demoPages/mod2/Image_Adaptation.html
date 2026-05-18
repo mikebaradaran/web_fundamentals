@@ -1,0 +1,31 @@
+<picture>
+  <!-- Large screens get a wide image -->
+  <source
+    media="(min-width: 800px)"
+    srcset="https://picsum.photos/1000/300?random=1"
+  >
+
+  <!-- Medium screens get a medium image -->
+  <source
+    media="(min-width: 500px)"
+    srcset="https://picsum.photos/700/300?random=2"
+  >
+
+  <!-- Small screens get a smaller image -->
+  <img
+    src="https://picsum.photos/400/300?random=3"
+    alt="Landscape"
+    style="width: 100%; border-radius: 8px;"
+  >
+</picture>
+
+<pre>
+    <h3>Explanation</h3>
+&lt;picture&gt; allows you to provide different images based on viewport width.
+&lt;source&gt; with media acts like a conditional rule.
+Viewports 800px or wider get the 1000px wide image.
+Viewports 500–799px get the 700px wide image.
+
+The &lt;img&gt; element at the end is the fallback for viewports smaller than 500px.
+Small displays download a smaller image, which improves performance on mobile.
+</pre>

@@ -1,0 +1,21 @@
+<div id="cards">
+  <div>Card 1</div><div>Card 2</div><div>Card 3</div>
+</div>
+
+<script>
+const cards = document.getElementById('cards');
+function enhance() {
+  if (window.innerWidth > 700) {
+    cards.style.display = 'flex';
+    cards.style.overflowX = 'auto';
+  } else {
+    cards.style.display = 'block';
+  }
+}
+window.addEventListener('resize', enhance);
+enhance();
+</script>
+
+<style>
+#cards div { flex: 0 0 300px; margin: .5rem; background: #ddd; padding: 1rem; border-radius: 6px; }
+</style>

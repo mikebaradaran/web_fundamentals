@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var controller1 = function ($scope) {
+            $scope.message = "Message from controller 1";
+        }
+        //--------------------------------------------------
+        var controller2 = function ($scope) {
+            $scope.message = "Message from controller 2";
+        }
+        //--------------------------------------------------
+        var myModule = angular.module("myModule", []);
+        myModule.controller("controller1", controller1);
+        myModule.controller("controller2", controller2);
+    </script>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="controller1">{{message}}</div>
+    <div ng-controller="controller2">{{message}}</div>
+</body>
+</html>

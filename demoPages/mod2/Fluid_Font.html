@@ -1,0 +1,21 @@
+<style>
+h2 {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2rem);
+  text-align: center;
+}
+p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.5;
+}
+</style>
+
+<h2>Fluid Type Example</h2>
+<p>
+  Resize the browser window — notice how the heading scales smoothly between 1rem and 2rem,
+  adapting to the viewport width without any media queries.
+</p>
+<p>
+  <h3>Explanation:</h3> 
+clamp(min, preferred, max) picks a size that scales fluidly between min and max based on viewport width.
+</p>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script src="scripts/jquery-3.2.1.js"></script>
+
+    <style>
+        #names div {
+            width:20%;
+            border-style:solid;
+            border-width:1px;
+            border-color:black;
+        }
+    </style>
+
+    <script>
+        function addName() {
+            var name = $("#theName").val();
+            $("<div>").text(name).appendTo("#names");
+            $("#names div:odd").css("background-color", "yellow");
+
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>List of Names</h1>
+    <div id="names">
+
+    </div>
+
+    <h2>Add new names</h2>
+    <form onsubmit="return addName()">
+        Enter a name: <input type="text" id="theName" />
+        <input type="submit" value="Add" />
+    </form>
+</body>
+</html>

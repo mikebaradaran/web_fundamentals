@@ -1,0 +1,59 @@
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        // JavaScript
+        async function getCustomers() {
+            const response = await fetch('https://txMike2.glitch.me/customers/ALFKI');
+            let data = await response.json();
+            console.log(data[0].City);
+        }
+        getCustomers();
+
+        // axios
+        const response = await axios.get("https://txmike2.glitch.me/customers");
+        display(response.data);
+
+
+        // jQuery:
+        const response = await $.get("https://txmike2.glitch.me/customers");
+        display(response[0].City);
+
+ </script>
+======================================================================================
+
+	// full JavaScript example
+
+    <script>
+        //async function getCustomers() {
+        //    const response = await fetch('https://tx100.glitch.me/customers');
+        //    let customers = await response.json();
+
+        //    for (let cus of customers) {
+        //        console.log(cus.ContactName);
+        //    }
+        //}
+        //getCustomers();
+    </script>
+
+    <script>
+        (async () => {
+            try {
+                const response = await fetch('https://tx100.glitch.me/customers');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const customers = await response.json();
+
+                for (let cus of customers) {
+                    console.log(cus.ContactName);
+                }
+
+            } catch (error) {
+                console.error('Error fetching data:', error.message);
+            }
+        })();
+
+    </script>
+  

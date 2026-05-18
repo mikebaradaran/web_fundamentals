@@ -1,0 +1,16 @@
+﻿<html>
+<head>
+</head>
+<body>
+    <!-- <script type="module" defer src="main.js"></script> -->
+    <script type="module">
+        import { doSomething } from './main.js';
+        function doWork(){
+            console.log("doWork is called");
+        }
+        document.getElementById("btnWork").addEventListener("click", doWork);
+    </script>
+
+    <button id="btnWork">Work!</button>
+</body>
+</html>

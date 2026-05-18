@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="divNames"></div>
+    <div id="divName"></div>
+    <script>
+        const students = ["Louis", "Callum", "Ruth", "Matthew", "Willian", "Harris",
+            "Jackson", "Jack", "Simon", "Laura", "Saeed", "Ellie", "Audrius","Jordan"];
+
+        const nos = [188, 299, 387, 470, 590, 620, 740, 860, 980, 122, 233, 344, 455, 599];
+
+        const selNames = document.createElement('select');
+        selNames.size = 6;
+
+        for (const [index, student] of students.entries()) {
+            const option = document.createElement('option');
+            option.innerHTML = student;
+            option.number = nos[index];
+            // if (index > 10) index = 1;
+            selNames.appendChild(option);
+        }
+        selNames.addEventListener('click', function (event) {
+            const stu = event.target;
+            document.getElementById('divName').innerHTML = stu.value + ", " + stu.number;
+        });
+        document.getElementById('divNames').appendChild(selNames);
+    </script>
+
+</body>
+</html>

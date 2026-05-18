@@ -1,0 +1,58 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('myModule', [])
+            .controller('myController', function ($scope) {
+                $scope.message = "Hello Students";
+
+                $scope.students = [
+                    { name: "Alice Johnson", days: 22, course: "AngularJS Basics" },
+                    { name: "Charlie Brown", days: 25, course: "Cyber security" },
+                    { name: "David Wilson", days: 26, course: "Development using C#" }
+                ];
+                $scope.maxDays = 100;
+                $scope.doClick = function(stu){
+                    $scope.studentName = stu.name;
+                    stu.days++;
+                    if (stu.days > $scope.maxDays) {
+                        stu.days = $scope.maxDays;
+                        stu.completed = true;
+                    }
+                }
+            });
+    </script>
+
+    <style>
+        td{
+           font-size:larger;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            border: 1px solid black;
+        }
+
+        td {
+                border: 1px solid black;
+                padding: 8px;
+            }
+           
+    </style>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <h1>{{message}}</h1>
+    Set max days:<input type="number" ng-model="maxDays" />
+    <hr />
+    <table>
+        <tr ng-repeat="stu in students">
+            <td>{{stu.name}}</td>
+            <td>{{stu.course}}</td>
+            <td>{{stu.days}}</td>
+            <td ng-show="stu.completed">{{stu.name}} completed the course 👍🏻</td>
+            <td ng-show="!stu.completed"><span ng-click="doClick(stu)">➕</span></td>
+        </tr>
+    </table>
+
+</body>
+</html>

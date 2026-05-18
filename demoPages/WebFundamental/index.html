@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA</title>
+</head>
+
+<body>
+
+    <button onclick="save()">Save</button>
+    <button onclick="read()">Read</button>
+
+    <script>
+        function save() {
+            localStorage["name"] = "Mike";
+        }
+        function read() {
+            alert(localStorage["name"]);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        tbody {
+            height: 200px;
+            display: block;
+            overflow: scroll;
+            width: 300px;
+        }
+
+        table {
+            border: 1px solid red;
+            width:300px; 
+            display: block"
+
+        }
+
+ 
+
+        /* table {
+            display: block;
+            height: 200px;
+            width: 30%;
+            overflow: auto;
+        }
+
+        table, 
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        } */
+
+        tr:hover {
+            background-color: lightcyan;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('app1', []).controller('controller1', function ($scope, $http) {
+            //$scope.searchString = "";
+            $http({
+                method: "Get", url: 'http://localhost:5000/getcustomers'
+            }).then(function (response) {
+                $scope.customers = response.data;
+            });
+        });
+    </script>
+</head>
+
+<body ng-app="app1" ng-controller="controller1">
+    <!-- <table>
+        <tr>
+            <th>ID</th>
+            <th>Contact name</th>
+            <th>City</th>
+        </tr>
+        <tr ng-repeat="cus in customers">
+            <td> {{cus.CustomerID}}</td>
+            <td>{{cus.ContactName}}</td>
+            <td>{{cus.City}}</td>
+            </div>
+    </table> -->
+
+
+    <input type="text" ng-model="searchString" />
+    Sort by:
+    <select ng-model="sortBy">
+        <option value="CustomerID">Customer ID</option>
+        <option value="ContactName">Contact name</option>
+        <option value="City">City</option>
+    </select>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td ng-click="sortBy='ContactName'">Contact name</td>
+                <td>City</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cus in customers | limitTo:10 | orderBy:sortBy | filter:searchString">
+                <td> {{cus.CustomerID}}</td>
+                <td>{{cus.ContactName}}</td>
+                <td>{{cus.City}}</td>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

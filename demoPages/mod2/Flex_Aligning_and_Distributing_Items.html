@@ -1,0 +1,38 @@
+<style>
+.container {
+  display: flex;
+  justify-content: space-between;  /* distributes items horizontally */
+  align-items: center;             /* aligns items vertically */
+  background: #f0f0f0;
+  height: 150px;
+  padding: 10px;
+}
+
+.item {
+  background: #FF5722;
+  color: white;
+  padding: 20px;
+  width: 100px;                     /* fixed width for demonstration */
+  text-align: center;
+  border:1px solid black;
+}
+</style>
+
+<div class="container">
+  <div class="item">Left</div>
+  <div class="item">Center</div>
+  <div class="item">Right</div>
+</div>
+
+<h3>Explanation</h3> 
+<pre>
+<b>justify-content: space-between</b> → first item sticks left, last sticks right, middle is spaced evenly
+<b>align-items: center</b> → vertical alignment inside the container
+
+You can change justify-content to <b>flex-start</b>, <b>flex-end</b>, <b>center</b>, or <b>space-around</b> to see different effects    
+</pre>
+<button onclick="document.querySelector('.container').style.justifyContent='left' ">justify-content: left;</button>
+<button onclick="document.querySelector('.container').style.justifyContent='center' ">justify-content: center;</button>
+<button onclick="document.querySelector('.container').style.justifyContent='space-between' ">justify-content: space-between;</button>
+<button onclick="document.querySelector('.container').style.justifyContent='right' ">justify-content: right;</button>
+<button onclick="document.querySelector('.container').style.justifyContent='space-evenly' ">justify-content: space-evenly;</button>

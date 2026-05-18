@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-3.1.0.js"></script>
+
+    <script>
+        function load() {
+            $.getJSON("http://localhost:5000/customers", function (result) {
+                $.each(result, function () {
+                    $('<p/>').text(this.CompanyName).appendTo('#div1');
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>JSON Example</h1>
+    <p><a href="http://localhost:5000/customers">Click here to see the raw data</a></p>
+    <input type="button" value="Load data" onclick="load()" />
+
+    <div id="div1"></div>
+</body>
+</html>

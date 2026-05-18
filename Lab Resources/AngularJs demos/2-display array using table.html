@@ -1,0 +1,22 @@
+<html> <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+         var myModule = angular.module("myModule", []);
+         var myController = function ($scope) {
+            $scope.students = [
+               {name: 'Peter', age: 18  }, {name: 'George', age: 20 },
+               {name: 'Alex', age: 21   }, {name: 'Shakila', age: 17} ];
+         }
+         myModule.controller("myController", myController);
+     </script>
+ </head>
+ <body ng-app="myModule" ng-controller="myController">
+     <table border="1">
+         <tr ng-repeat="stu in students">
+             <td>{{stu.name}}</td>
+             <td>{{stu.age}}</td>
+         </tr>
+     </table>
+ </body> 
+ </html>
+ 

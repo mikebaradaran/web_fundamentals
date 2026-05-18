@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Item Demo</title>
+    <style>
+        .container {
+            display: flex;
+            background: #eee;
+            padding: 20px;
+            gap: 10px;
+            height: 150px;
+            align-items: flex-start;
+            /* default cross‑axis alignment */
+        }
+
+        .item {
+            flex: 1;              /* grow */
+            align-self: center;   /* overrides align-items */
+            order: 2;             /* item position */
+            background: #cce4ff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .item.other {
+            order: 1;
+            background: #ffd7cc;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Flexbox <code>.item</code> Demo</h2>
+    <div class="container">
+        <div class="item other">Item A (order 1)</div>
+        <div class="item">Item B (flex:1, align-self:center, order:2)</div>
+        <div class="item other">Item C (order 1)</div>
+    </div>
+
+    <p>
+    <ul>
+        <li>
+            <b>flex: 1</b> - Used for equal-width cards, responsive columns, toolbars.
+        </li>
+        <li>
+            <b>align-self</b> center - Used when one item needs different vertical alignment.
+        </li>
+        <li>
+            <b>order: 2</b> - Used to reorder items for responsive layouts (e.g., mobile vs desktop).
+        </li>
+    </ul>
+
+
+
+    </p>
+</body>
+
+</html>

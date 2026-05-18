@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Query Demo</title>
+
+    <style>
+        /* The card becomes a container */
+        .card {
+            container-type: inline-size;
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 40px auto;
+        }
+
+        /* Default layout: vertical stack */
+        .inner {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* When the CARD (not the page!) reaches 300px wide */
+        @container (min-width: 300px) {
+            .inner {
+                flex-direction: row;
+            }
+        }
+
+        .box {
+            background: orange;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Container Query Demo</h2>
+
+    <div class="card">
+        <div class="inner">
+            <div class="box">A</div>
+            <div class="box">B</div>
+        </div>
+    </div>
+
+    <p style="text-align:center; max-width:600px; margin:20px auto; color:#555;">
+        Resize your browser window.
+        Watch how the boxes switch from vertical to horizontal when the <strong>card itself</strong> becomes wider than
+        300px.
+
+        The grid controls how many cards fit per row
+
+Resize the browser → cards may be 1-per-row, 2-per-row, 3-per-row...
+<pre>
+<hr/>
+Each card behaves like its own "responsive viewport"
+    <b>card { container-type: inline-size; }</b>
+
+ Each card switches layout individually
+
+When a single card grows wider than 300px:
+    <b>@container (min-width: 300px)</b>
+    it switches from vertical to horizontal
+</pre>
+    </p>
+
+</body>
+
+</html>

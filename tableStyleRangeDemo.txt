@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>QA</title>
+    <style>
+        div div {
+            background-color: #ecdedd;
+        }
+
+        .tableRow div {
+            width: 3em;
+            float: left;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .tableRow div:hover {
+            border: 1px solid red;
+            background-color: lightblue;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .tableRow {
+            clear: left;
+            margin-left:1em;
+        }
+
+        .bigNumber{
+            background-color:black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Great Multiplication table!!</h1>
+    <p id="myTable"></p>
+    <input type="range" oninput="rangeHighlight(this.value)" id="myRange" min="0" max="100" value="100">
+    <span id="rangeValue"></span>
+    <script>
+        function highlightBigNumbersGreaterThan(x) {
+            for (let e of document.querySelectorAll('.tableRow div')) {
+                let no = Number(e.innerHTML);
+                e.classList.remove("bigNumber");
+                if (no > x)
+                    e.classList.add("bigNumber");
+            }
+        }
+
+        function rangeHighlight(v) {
+            document.getElementById("rangeValue").innerHTML = v;
+            highlightBigNumbersGreaterThan(v);
+        }
+
+        function multi(min, max) {
+            var table = "<div>";
+            for (var row = min; row <= max; row++) {
+                table += "<div class='tableRow'>";
+                for (var column = min; column <= max; column++) {
+                    table += `<div>${row * column}</div>`;
+                }
+                table += "</div>";
+            }
+            table += "</div>"
+            return table;
+        }
+
+        let tbl = multi(1, 10);
+        document.getElementById("myTable").innerHTML = tbl;
+        highlightBigNumbersGreaterThan(60);
+
+    </script>
+</body>
+</html>

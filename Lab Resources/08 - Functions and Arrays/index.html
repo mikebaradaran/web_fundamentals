@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script>
+        function multiplicationTable(maxRows, maxColumns) {
+            var table = "<table>";
+            for (var row = 0; row < maxRows; row++) {
+                table += "<tr>";
+                for (var column = 0; column < maxColumns; column++) {
+                    table += "<td>" + row * column + "</td>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>"
+            //document.write(table);
+            return table;
+        }
+
+        function getNames() {
+            var names = ["John", "Mary", "Harjit"];
+            var ages = [22, 25, 31];
+
+            for (var i = 0; i < names.length; i++) {
+                document.write("<p>" + names[i] + " is " + ages[i] + " years old.</p>");
+            }
+        }
+    </script>
+
+    <style>
+        table {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <script>
+            var d = new Date();
+            var w = d.getDay();
+
+            var s;
+
+            if (w == 0) s = "Sunday";
+            if (w == 1) s = "Monday";
+            if (w == 2) s = "Tuesday";
+            if (w == 3) s = "Wednesday";
+            if (w == 4) s = "Thursday";
+            if (w == 5) s = "Friday";
+            if (w == 6) s = "Saturday";
+
+            document.write('Today is ' + s);
+        </script>
+    </p>
+    <p>
+        <script>
+            var sum = 0;
+            var i = 1;
+            while (i <= 100) {
+                sum += i;
+                i++;
+            }
+            document.write("The total of the numbers between 1 and 100 is " + sum);
+        </script>
+    </p>
+    <p>
+        <script>
+            var result = "";
+            for (var i = 1; i <= 100; i++) {
+                if (i % 2 == 1) {
+                    //document.write(i + ", ");
+                    result += i + ", ";
+                }
+            }
+            document.write(result);
+        </script>
+    </p>
+    <div id="timesTable">
+        <script>
+            document.write(multiplicationTable(5, 5));
+        </script>
+    </div>
+    <div id="names">
+        <script>
+            getNames();
+        </script>
+    </div>
+</body>
+</html>

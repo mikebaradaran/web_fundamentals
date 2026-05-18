@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="displayData"></div>
+    <script>
+        let startObj;
+        function displayAnyACollection(data, ) {
+            if (startObj) {
+                data = data[startObj];
+                startObj = undefined;
+            }
+            for (obj of data) {
+                Object.keys(obj).forEach(key => {
+                    $(`<div>${key}: ${obj[key]}</div>`).appendTo($('#displayData'));
+                });
+                $(`<hr />`).appendTo($('#displayData'));
+            }
+        }
+
+        url = "http://tx100.glitch.me/customers";
+        $.get(url, displayAnyACollection);
+
+        url = "http://www.omdbapi.com/?apikey=ef5e4257&s=star";
+        startObj = "Search";
+        $.get(url, displayAnyACollection);
+
+    </script>
+</body>
+</html>

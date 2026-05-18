@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        function hide() {
+            document.getElementById("moreText").style.display = 'None';
+        }
+        function show() {
+            document.getElementById("moreText").style.display = 'Block';
+        }
+    </script>
+</head>
+<body onload="document.getElementById('testText').style.color='red'">
+    <!-- This shows how to hide elements without using a function -->
+    <div id="testText">The quick brown fox jumps over the lazy dog.</div>
+    <button onclick="document.getElementById('testText').hidden=false">Show</button>
+    <button onclick="document.getElementById('testText').hidden=true">Hide</button>
+
+    <br />
+
+    <!-- This shows how to hide elements using a function -->
+    <div id="moreText">The quick brown fox jumps over the lazy dog.</div>
+    <button onclick="show()">Show</button>
+    <button onclick="hide()">Hide</button>
+
+    <br />
+
+    <noscript>The buttons will not work because you don't have JavaScript enabled!</noscript>
+</body>
+</html>

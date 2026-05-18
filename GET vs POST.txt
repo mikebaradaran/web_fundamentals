@@ -1,0 +1,7 @@
+URL size is 2k
+Get for simple search request to be visible
+Get for simple scaler types
+You can only POST with files
+Get should not send sensitive info like password or allow users to bookmark!
+POST data is not visible to users but are exposed to hackers! Use SSL :)
+type a URL of a site uses GET 

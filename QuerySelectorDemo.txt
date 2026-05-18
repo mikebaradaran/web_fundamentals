@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>Div with no identifier!</div>
+    <div id="div1" company="QA">Has id = div1</div>
+    <div class="class1">Has class= class1</div>
+    <div company="QA">Has attribute of company=QA</div>
+
+    <script>
+        document.querySelectorAll("div")[0].style.color = "red";
+        document.querySelector("#div1").style.color = "green";
+        document.querySelectorAll(".class1")[0].style.color = "blue";
+        for (let e of document.querySelectorAll("[company='QA']")){
+            e.style.border = "2px solid blue";
+        }
+    </script>
+
+</body>
+</html>

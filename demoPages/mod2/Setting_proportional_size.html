@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flex Layout Demo</title>
+  <style>
+    .container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .item {
+      flex: 1;
+      padding: 20px;
+      background: #ececec;
+      border-radius: 8px;
+    }
+
+    .middle {
+      flex: 2;
+      background: #dcdcdc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Left</div>
+    <div class="item middle">Middle</div>
+    <div class="item">Right</div>
+  </div>
+</body>
+</html>

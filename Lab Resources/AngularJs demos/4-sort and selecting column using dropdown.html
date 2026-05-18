@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('app1', [])
+            .controller('controller1', function ($scope) {
+                $scope.sortBy = "";
+                $scope.searchStrict = false;
+                $scope.searchString = "";
+                $scope.students = [
+                { name: "David",  course: "C#" },
+                { name: "Linda",  course: "Java" },
+                { name: "Sasha",  course: "Marketing" },
+                { name: "Sean",   course: "Networking" },
+                { name: "Chris",  course: "Networking" }
+            ];
+        });
+    </script>
+</head>
+
+<body ng-app="app1" ng-controller="controller1">
+    Sort by: 
+    <select ng-model="sortBy">
+        <option value="name">Name</option>
+        <option value="course">Course</option>
+    </select>
+    <table border="1">
+        <tr ng-repeat="stu in students | orderBy:sortBy">
+            <td>{{stu.name}}</td>
+            <td>{{stu.course}}</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        td:hover{
+            border:2px solid blue;
+        }
+        tr, td{
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        async function getCustomers() {
+            const response = await $.get("https://txmike2.glitch.me/customers");
+            showCustomers(response);
+        }
+        async function getOrders(id) {
+            const response = await $.get("https://txmike2.glitch.me/orders/"+id);
+            showOrders(response);
+        }
+
+        function showOrders(ordersData){
+            ordersData.forEach(ord => {
+                let row = $(`<tr>
+                            <td>${ord.CustomerID}</td>
+                            <td>${ord.OrderID}</td>
+                            <td>${ord.ShipCity}</td>
+                            <td>${ord.ShipName}</td></tr>`);
+                row.appendTo($("#customersTable"));
+            });
+        }
+
+        function showCustomers(customersData) {
+            customersData.forEach(cus => {
+                let row = $(`<tr>
+                                <td>${cus.CustomerID}</td>
+                                <td>${cus.ContactName}</td>
+                            <td>${cus.City}</td></tr>`);
+                row.appendTo($("#ordersTable"));
+                row.cusID = cus.CustomerID;
+
+                row.click(function () {
+                    $.get("http://txMike2.glitch.me/orders/" + row.cusID,
+                        function (data) {
+                            showOrders(data);
+                        }
+                    );
+                })
+            });
+        }
+
+        $(function () {
+            getCustomers();
+        });
+
+
+        function showCustomersAllKeys(data) {
+            var keys = Object.keys(data[0]);
+            data.forEach(cus => {
+                let row = "<tr>";
+                keys.forEach(key => {
+                    row += `<td>${cus[key]}</td>`
+                });
+                row += "</tr>";
+                $(row).appendTo($("#customersTable"));
+            });
+        }
+        
+    </script>
+</head>
+<body>
+    <table id="customersTable"></table>
+    <hr />
+    <table id="ordersTable"></table>
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script>
+        function multiplicationTable(maxRows, maxColumns) {
+            var table = "<table>";
+            for (var row = 0; row < maxRows; row++) {
+                table += "<tr>";
+                for (var column = 0; column < maxColumns; column++) {
+                    table += "<td class='tableItem'>" + row * column + "</td>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>"
+            //document.write(table);
+            return table;
+        }
+
+        function getNames() {
+            var names = ["John", "Mary", "Harjit"];
+            var ages = [22, 25, 31];
+
+            var result = '';
+            for (var i = 0; i < names.length; i++) {
+                result += "<p>" + names[i] + " is " + ages[i] + " years old.</p>";
+            }
+            document.getElementById('names').innerHTML = result;
+            //document.getElementById('names').innerText = result;
+        }
+
+        function highlightBigNumbers() {
+            allNumbers = document.getElementsByClassName("tableItem");
+            for (var item = 0; item < allNumbers.length; item++) {
+                if (parseInt(allNumbers[item].innerText) > 10) {
+                    allNumbers[item].className += allNumbers[item].className ? " bigNumber" : "bigNumber";
+                    //allNumbers[item].className = "bigNumber"; // Doesn't work if the item already has a class
+                    allNumbers[item].style.backgroundColor = "yellow";
+                }
+            }
+        }
+    </script>
+
+    <style>
+        table {
+            width: 50%;
+        }
+        .bigNumber {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <script>
+            var d = new Date();
+            var w = d.getDay();
+
+            var s;
+
+            if (w == 0) s = "Sunday";
+            if (w == 1) s = "Monday";
+            if (w == 2) s = "Tuesday";
+            if (w == 3) s = "Wednesday";
+            if (w == 4) s = "Thursday";
+            if (w == 5) s = "Friday";
+            if (w == 6) s = "Saturday";
+
+            document.write('Today is ' + s);
+        </script>
+    </p>
+    <p>
+        <script>
+            var sum = 0;
+            var i = 1;
+            while (i <= 100) {
+                sum += i;
+                i++;
+            }
+            document.write("The total of the numbers between 1 and 100 is " + sum);
+        </script>
+    </p>
+    <p>
+        <script>
+            var result = "";
+            for (var i = 1; i <= 100; i++) {
+                if (i % 2 == 1) {
+                    //document.write(i + ", ");
+                    result += i + ", ";
+                }
+            }
+            document.write(result);
+        </script>
+    </p>
+    <div id="timesTable">
+        <script>
+            document.write(multiplicationTable(5, 5));
+            highlightBigNumbers();
+        </script>
+    </div>
+    <div id="names">
+    </div>
+    <script>
+            getNames();
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Style Inspector</title>
+
+    <style>
+        /* Shared item styling */
+        .item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* ===== RED FLEX CONTAINER ===== */
+        .flex-red {
+            display: flex;
+            gap: 10px;
+            background: #ffcccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* ===== GREEN FLEX CONTAINER ===== */
+        .flex-green {
+            display: flex;
+            gap: 10px;
+            background: #ccffcc;
+            padding: 20px;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        /* ===== YELLOW FLEX CONTAINER (NEW) ===== */
+        .flex-yellow {
+            display: flex;
+            gap: 10px;
+            background: #fff7cc;
+            padding: 20px;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        /* Items inside yellow container grow + shrink */
+        .flex-yellow .item {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+        }
+
+        /* ===== BLUE FLEX CONTAINER ===== */
+        .flex-blue {
+            display: flex;
+            gap: 10px;
+            background: #cce0ff;
+            padding: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Clickable demo containers */
+        .demo {
+            border: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        /* Output box */
+        #output {
+            background: #222;
+            color: #0f0;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="flex.js" defer></script>
+
+</head>
+
+<body>
+
+    <h2>Flexbox: Three Independent Layouts + One Flexible Layout</h2>
+
+    <!-- RED: simple row -->
+    <div class="flex-red demo">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <!-- GREEN: spaced-out row -->
+    <div class="flex-green demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <!-- YELLOW: spaced-out + flexible items -->
+    <div class="flex-yellow demo">
+        <div class="item">Grow</div>
+        <div class="item">Shrink</div>
+        <div class="item">Flex</div>
+    </div>
+
+    <!-- BLUE: wrapping layout -->
+    <div class="flex-blue demo">
+        <div class="item">X</div>
+        <div class="item">Y</div>
+        <div class="item">Z</div>
+        <div class="item">W</div>
+        <div class="item">Q</div>
+    </div>
+</body>
+
+</html>

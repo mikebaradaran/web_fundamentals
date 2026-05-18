@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex2</title>
+
+    <style>
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: blue;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background: #cec;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Make one item span multiple cells */
+        .wide {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Grid Demo</h2>
+    <div class="grid-demo">
+        <div class="grid-item wide">A (spans 2 columns)</div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">D</div>
+        <div class="grid-item">E</div>
+    </div>
+
+</body>

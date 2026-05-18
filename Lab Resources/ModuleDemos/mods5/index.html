@@ -1,0 +1,15 @@
+﻿<html>
+<head>
+    <script type="module" defer>
+        import { doSomething } from './main.js';
+        // window.doWork = function(){
+        //     doSomething();
+        // }
+        document.getElementById("btn1").addEventListener('click', doSomething);
+    </script>
+</head>
+<body>
+    <!-- <button onclick="doWork()">Work!</button> -->
+    <button id="btn1">Work!</button>
+</body>
+</html>
