@@ -1,0 +1,105 @@
+const canvas = document.getElementById("game");
+canvas.width = 1500;
+const ctx = canvas.getContext("2d");
+class Ball {
+    constructor(x, y, dx, dy, radius, colour) {
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.radius = radius;
+        this.colour = colour;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.colour;
+        ctx.fill();
+    }
+    right() { return this.x + this.radius; }
+    left() { return this.x - this.radius; }
+    top() { return this.y - this.radius; }
+    bottom() { return this.y + this.radius; }
+
+    update() {
+        // Apply gravity
+        this.dy += 0.2;   // try 0.1–0.3 for different strengths
+
+        // Bounce left/right
+        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+            this.dx = -this.dx;
+        }
+
+        // Bounce top/bottom
+        if (this.y + this.radius > canvas.height) {
+            this.dy = -this.dy * 0.9;  // bounce + friction
+        }
+
+        this.x += this.dx;
+        this.y += this.dy;
+
+        this.draw();
+    }
+}
+
+
+// Create random balls
+let balls = [];
+
+for (let i = 0; i < 20; i++) {
+    let radius = Math.random() * 15 + 10;
+    let x = Math.random() * (canvas.width - radius * 2) + radius;
+    let y = Math.random() * (canvas.height - radius * 2) + radius;
+    let dx = (Math.random() - 0.5) * 4;
+    let dy = (Math.random() - 0.5) * 4;
+
+    let colour = `hsl(${Math.random() * 360}, 80%, 50%)`;
+
+    balls.push(new Ball(x, y, dx, dy, radius, colour));
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //detectCollisions()
+    for (let ball of balls) {
+        ball.update();
+    }
+
+    requestAnimationFrame(animate);
+}
+
+// distance = √((a.x - b.x)² + (a.y - b.y)²)
+// if (distance < a.radius + b.radius) → collision
+function detectCollisions() {
+    for (let i = 0; i < balls.length; i++) {
+        for (let j = i + 1; j < balls.length; j++) {
+
+            let a = balls[i];
+            let b = balls[j];
+
+            let dx = a.x - b.x;
+            let dy = a.y - b.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < a.radius + b.radius) {
+                // Simple bounce: reverse both velocities
+                a.dx = -a.dx;
+                a.dy = -a.dy;
+                b.dx = -b.dx;
+                b.dy = -b.dy;
+
+                // Optional: move them apart slightly to avoid sticking
+                let overlap = (a.radius + b.radius) - distance;
+                let half = overlap / 2;
+
+                a.x += (dx / distance) * half;
+                a.y += (dy / distance) * half;
+                b.x -= (dx / distance) * half;
+                b.y -= (dy / distance) * half;
+            }
+        }
+    }
+}
+
+animate();
