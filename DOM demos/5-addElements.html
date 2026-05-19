@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <ul id="students"></ul>
+
+    <script>
+        let students = ["Alois", "Thomas B", "Isobel", "Keluni", "Jack", "Rita", "Thomas W", "Dan", "Andi"];
+        let ul = document.getElementById("students");
+
+        //students.forEach(name => {
+        //    ul.innerHTML += `<li>${name}</li>`;
+        //});
+
+        for (let name of students) {
+            ul.innerHTML += `<li>${name}</li>`;
+        }
+    </script>
+</body>
+</html>

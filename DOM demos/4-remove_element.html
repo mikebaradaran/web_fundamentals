@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <ul id="list">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+    </ul>
+    <button onclick="remove(0)" id="delete" >Remove</button>
+    <script>
+        function remove(index) {
+            let list = document.getElementById("list");
+
+            let first = list.children[index];
+
+            first.remove();   // removes first one
+
+            if (list.children.length <= 0) {
+                document.getElementById("delete").setAttribute("disabled", true);
+            }
+        }
+
+    </script>
+</body>
+</html>

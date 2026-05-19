@@ -9,14 +9,49 @@
 
 <body>
     <script>
-        const students = [
+        const originalStudents = [
             { name: "Alice", score: 82 },
+            { name: "Mike", score: 8 },
+            { name: "Dave", score: 18 },
             { name: "Ben", score: 74 },
             { name: "Chloe", score: 91 }
         ];
-        let x = 100, y= 4, z=90;
-        console.log(x,y,z);
+
+        const students = [...originalStudents, {name:"Wilma", score:100}];
+        
+        let x = 100, y = 4, z = 90;
+        console.log(x, y, z);
         console.table(students);
+
+        const passed = students.filter(stu => stu.score >= 50);
+        console.table(passed);
+
+        const names = students.map(stu => stu.name);
+        console.log(names);
+
+        console.log("Let's increase the scores by 10%");
+        const newStudents = students.map(s => {
+            s.score = (s.score * 1.1).toFixed(2);
+            return s;
+        });
+
+        console.table(newStudents);
+        console.log("Get a student that is in this class");
+        const stu = students.find(s => s.name === "Ben");
+        console.log(stu);
+
+        console.log("Get a student that is NOT in this class");
+        const stu2 = students.find(s => s.name === "Zak");
+        console.log(!stu2);
+
+        const index = students.findIndex(s => s.name === "Ben");
+        console.log(index);
+
+        console.log(names.includes("Mike")); // true
+
+        const firstTwo = students.slice(0, 2);
+        console.table(firstTwo);
+
 
     </script>
 </body>

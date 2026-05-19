@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>QA</title>
+    <style>
+        .tableColumn { width: 3em; float: left; border: 1px solid black; text-align:center;}
+        .tableRow{  clear:left; }
+    </style>    
+</head>
+<body>
+    <h1>Multiplication Table</h1>
+    <div id="multiTable"></div>
+    <script>
+        var table = "<div>";
+        for (var row = 1; row < 11; row++) {
+            table += "<div class='tableRow'>";
+            for (var column = 1; column < 11; column++) {
+                table += "<div class='tableColumn'>" + row * column + "</div>";
+            }
+            table += "</div>";
+        }
+        table += "</div>";
+        document.getElementById("multiTable").innerHTML = table;
+    </script>
+</body>
+</html>

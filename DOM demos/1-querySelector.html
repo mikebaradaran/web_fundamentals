@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 class="title">Hello</h1>
+    <p class="note">Some text</p>
+
+    <div id="info"></div>
+
+    <script>
+        let title = document.querySelector(".title");
+        let notes = document.querySelectorAll(".note");
+
+        const info = document.getElementById("info");
+        info.innerText = title.innerText + "\n";
+        info.innerText += notes.length;
+
+    </script>
+</body>
+</html>

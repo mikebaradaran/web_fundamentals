@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <script>
+        let menu = document.getElementById("menu");
+
+        let first = menu.firstElementChild;
+        let second = first.nextElementSibling;
+        let parent = second.parentNode;
+
+        console.log(first.innerText);   // Home
+        console.log(second.innerText);  // About
+        console.log(parent.id);         // menu
+    </script>
+</body>
+</html>

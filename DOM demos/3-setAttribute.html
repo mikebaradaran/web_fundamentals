@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <img id="photo" src="old.jpg">
+
+    <script>
+        let img = document.getElementById("photo");
+
+        console.log(img.getAttribute("src"));   
+        img.setAttribute("src", "pic1.png");
+        img.setAttribute("alt", "A new photo");
+    </script>
+
+</body>
+</html>
