@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA</title>
+    <style>
+        .green_border {
+            border: 1px solid green;
+        }
+
+        .red_border {
+            border: 1px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ol id="students"></ol>
+    <ul id="students2"></ul>
+
+    <script>
+
+        const students = [
+            "Alois", "Thomas B", "Isobel", "Keluni", "Jack",
+            "Rita", "Thomas W", "Dan", "Andi"
+        ];
+
+        let olStudents = document.getElementById('students');
+        let olStudents2 = document.getElementById('students2');
+
+        for (let name of students) {
+            let liStudent = document.createElement('li');
+            liStudent.textContent = name;
+            liStudent.addEventListener('click', ()=> {
+                alert(liStudent.textContent);
+            });
+            olStudents.appendChild(liStudent);
+        }
+
+        for (let name of students) {  // Not as safe as teh above method
+            olStudents2.innerHTML += `<li>${name}</li>`;
+        }
+
+        document.getElementsByTagName('body')[0].appendChild(document.createElement("hr"));
+
+        olStudents.classList.add("green_border");
+        olStudents2.classList.add("red_border");
+    </script>
+</body>
+
+</html>
