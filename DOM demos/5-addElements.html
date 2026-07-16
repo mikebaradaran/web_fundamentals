@@ -11,9 +11,9 @@
         let students = ["Alois", "Thomas B", "Isobel", "Keluni", "Jack", "Rita", "Thomas W", "Dan", "Andi"];
         let ul = document.getElementById("students");
 
-        //students.forEach(name => {
-        //    ul.innerHTML += `<li>${name}</li>`;
-        //});
+        students.forEach(name => {
+           ul.innerHTML += `<li>Method-1: ${name}</li>`;
+        });
 
         for (let name of students) {
             ul.innerHTML += `<li>${name}</li>`;

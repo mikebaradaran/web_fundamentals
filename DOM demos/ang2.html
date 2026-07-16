@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope, $http) {
+            $http({
+                method: "Get", url: 'https://tx100.onrender.com/customers'
+            }).then(function (response) {
+                $scope.customers = response.data;
+            });
+
+            $scope.doClick = function (cus) {
+                $http({
+                    method: "Get", url: 'https://tx100.onrender.com/orders/' + cus.CustomerID
+                }).then(function (response) {
+                    $scope.orders = response.data;
+                });
+            };
+        }
+        myModule.controller("myController", myController);
+    </script>
+    <style>
+        tr:hover {
+            outline: 3px solid blue;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <table>
+        <tr ng-repeat="cus in customers | limitTo:10" ng-click="doClick(cus)">
+            <td>{{cus.CustomerID}}</td>
+            <td>{{cus.ContactName}}</td>
+            <td>{{cus.Country}}</td>
+            <td>{{cus.City}}</td>
+        </tr>
+    </table>
+    
+    <h2 ng-hide="orders==null">Orders are</h2>
+    
+    <table>
+        <tr ng-repeat="ord in orders">
+            <td>{{ord.CustomerID}}</td>
+            <td>{{ord.OrderID}}</td>
+            <td>{{ord.ShipVia}}</td>
+            <td>{{ord.ShipName}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

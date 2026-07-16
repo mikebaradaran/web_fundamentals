@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope, $http) {
+            $http({
+                method: "Get", url: 'https://tx100.onrender.com/customers'
+            }).then(function (response) {
+                $scope.customers = response.data;
+            });
+
+            $scope.doClick = function (cus) {
+                alert(JSON.stringify(cus));
+            };
+        }
+
+        myModule.controller("myController", myController);
+    </script>
+    <style>
+        tr:hover{
+            outline:1px solid blue;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <table>
+        <tr ng-repeat="cus in customers" ng-click="doClick(cus)">
+            <td>{{cus.CustomerID}}</td>
+            <td>{{cus.ContactName}}</td>
+            <td>{{cus.Country}}</td>
+            <td>{{cus.City}}</td>
+        </tr>
+    </table>
+</body>
+
+
+</html>
