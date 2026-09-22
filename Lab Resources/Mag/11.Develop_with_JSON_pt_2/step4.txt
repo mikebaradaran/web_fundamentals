@@ -1,0 +1,1 @@
+//code//function processTweets(tweets) {    var ul = document.getElementById("tweetsList");    // add all tweets to the tweets menu    for (var i = 0; i < tweets.length; i++) {        var tweet = tweets[i];        // code to display each tweet here    }}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EaselJS Example: Platformer Game</title>
+
+<style>body {background-color: #000;}</style>
+<script src="lib/easel.js"></script>
+<script src="Platform.js"></script>
+<script src="Hero.js"></script>
+<script src="Crate.js"></script>
+<script>
+var KEYCODE_SPACE = 32, KEYCODE_UP = 38, KEYCODE_LEFT = 37, KEYCODE_RIGHT = 39;		
+var canvas, stage, lfHeld, rtHeld, platforms, crates, hero, heroCenter,	key, door, gameTxt;
+var keyDn = false, play=true, dir="right";
+var loaded = 0, vy = 0, vx = 0;
+var jumping = false, inAir = true, gravity = 2;
+var img = new Image();
+var bgimg = new Image();
+var kimg = new Image();
+var dimg = new Image();
+var platformW = [300, 100, 180, 260, 260, 100, 100];
+var platformX = [40, 220, 320, 580, 700, 760, 760];
+var platformY = [460, 380, 300, 250, 550, 350, 450];
+//register key functions
+document.onkeydown=handleKeyDown;
+document.onkeyup=handleKeyUp;
+
+function init() {
+	//associate the canvas with the stage
+	canvas = document.getElementById("canvas");
+	stage = new Stage(canvas);
+	bgimg.onload = this.handleImageLoad; //start preloading big images
+	bgimg.src = "img/scene.jpg";
+	kimg.onload = this.handleImageLoad;
+	kimg.src = "img/key.png";
+	dimg.onload = this.handleImageLoad;
+	dimg.src = "img/door.jpg";
+	img.onload = this.handleImageLoad;
+	img.src = "img/hero.png";
+}
+function handleImageLoad(event) {
+	loaded+=1;
+	if (loaded==4){
+		start();
+	}
+}
+
+//allow for arrow control scheme
+function handleKeyDown(e) {
+	if(!e){ var e = window.event; }
+	switch(e.keyCode) {
+		case KEYCODE_LEFT:	lfHeld = true; dir="left"; break;
+		case KEYCODE_RIGHT: rtHeld = true; dir="right"; break;
+		case KEYCODE_SPACE:	jump(); break;
+	}
+}
+function handleKeyUp(e) {
+	if(!e){ var e = window.event; }
+	switch(e.keyCode) {
+		case KEYCODE_LEFT:	lfHeld = false; keyDn=false; hero.gotoAndStop("idle_h"); break;
+		case KEYCODE_RIGHT: rtHeld = false; keyDn=false; hero.gotoAndStop("idle"); break;
+	}
+}
+</script>
+</head>
+<body onload="init();">
+		<canvas id="canvas" width="960px" height="600px"></canvas>
+</body>
+</html>

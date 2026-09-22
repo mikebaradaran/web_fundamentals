@@ -1,0 +1,12 @@
+			$(document).ready(function(){
+				$(".thumblinks li a").click(function(){
+					event.preventDefault()
+					reference = $(this).attr("href");
+					$(".thumblinks li a").removeClass("selected");
+					$(this).addClass("selected");
+					$(".thumbnails li:first").before($(reference));
+					$("#bottom img").attr("src",$(reference+" img").attr("rel"));
+				});
+				
+				
+			});

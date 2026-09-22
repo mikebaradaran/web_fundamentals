@@ -1,0 +1,54 @@
+/* reset */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+ol, ul {
+	list-style: none;
+}
+
+a img{
+	border: none;
+}
+
+a { text-decoration: none; }
+
+.clearfix {
+	display: block;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* end reset */
+
+
+#wrapper {  width: 80%; max-width:800px; margin: 0 auto;}
+
+/*  main styles */
+body {
+	
+	background: url('../images/bg.png') repeat left top; 
+	font-family: 'Georgia', 'Arial', sans-serif;	
+}
+
+
+h2 {
+	font-family: 'Lobster', cursive;
+	font-size: 2.3em;
+	margin: 50px 0;
+	color: #d1c8ba;
+	text-shadow: #fff 1px 1px;		
+}
+
+
+
+
+
+

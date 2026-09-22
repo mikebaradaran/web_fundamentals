@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Interactive Scene Demo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link href='http://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
+<style>
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1e5799), color-stop(0%,#ffffff), color-stop(100%,#b6e3ef)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%,#ffffff 0%,#b6e3ef 100%); /* Chrome10+,Safari5.1+ */
+	margin: 0px;
+	overflow: hidden;
+	line-height: 1.5em;
+}
+h1 {
+	font-family: 'Merriweather', serif;
+	color:#906;
+	font-size: 4em;
+	letter-spacing: -0.05em;
+}
+h2 {
+	font-family: 'Merriweather', serif;
+	font-size: 2em;
+	letter-spacing: -0.05em;
+}
+#header {
+	position: absolute;
+	top: 5px;
+	width: 66%;
+	text-align: center;
+	z-index: 100;
+	display: block;
+}
+.info {
+	position: absolute;
+	color: #fff;
+	top: 150px;
+	right: 80px;
+	width: 300px;
+	height: 400px;
+	padding: 20px;
+	background-color: rgba(153, 0, 102, 0.8);
+	z-index: 100;
+	display: block;
+	-webkit-border-radius: 15px;
+	visibility: hidden;
+}
+a { color: skyblue }
+</style>
+</head>
+<body>
+<div id="header"><h1>Discovery Centre</h1></div>
+<div class="info" id="mountain"><h2>Mountain Valley</h2>
+<p>If you really want a good workout, take off on some of our mountain trails which head up onto the top of the range. A hard slog going up, but there is a superb downhill run coming back!</p>
+<p>Of course you are welcome to bring your own bike to Mountain Valley, where you can access the trails.</p></div>
+
+<div class="info" id="lake"><h2>Lake Adventure</h2>
+<p>At Lake Adventure the possibilities for fun are endless. Some days you'll want to relax, snooze in the sun, or just be plain lazy. On other days you can enjoy fun features as a lake full of sports fish, a supervised sand swimming beach, children's playground, and our spacious clubhouse with gameroom overlooking beautiful Lake Adventure.</p></div>
+
+<div class="info" id="forest"><h2>Forest Trail</h2>
+<p>The mountain bike trails here total over 130km and are supported by a continual programme of trail maintenance and development.</p>
+<p>With 4 superb flowing trails and more all weather singletrack than any other centre you simply have to check it out!</p></div>
+
+<script src="js/Three.js"></script>
+<script src="js/ColladaLoader.js"></script>
+<script src="js/Detector.js"></script>
+<script src='js/threex.domevent.js'></script>
+<script src='js/threex.domevent.object3d.js'></script>
+<script>
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+var scene, camera, renderer, model, ground, rot;
+var rotate=true, over=false;
+var loader = new THREE.ColladaLoader();
+var mnt, mbox, lk, lbox, fr, fbox;
+
+loader.load( 'scene.dae', function ( collada ) {
+	model = collada.scene;
+	model.scale.x = model.scale.y = model.scale.z = 0.125;
+	init();
+	animate();
+} );
+
+function init() {
+	var container = document.createElement( 'div' );
+	document.body.appendChild( container );
+	// Scene
+	scene = new THREE.Scene();
+	// Camera
+	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.01, 1000 );
+	camera.position.set( -45, 12, 15 );
+	camera.lookAt( new THREE.Vector3( -1, 2, 4 ) );
+	scene.add( camera );
+	
+
+	// Add the interactivity
+	THREE.Object3D._threexDomEvent.camera(camera);
+	ground = model.getChildByName( 'ID276', true );
+	ground.on('mouseout', function(){
+		rotate=true;
+	});
+	ground.on('mouseover', function(){
+		rotate=false;
+	});
+	mnt = model.getChildByName( 'ID43', true );
+	mbox = document.getElementById("mountain");
+	mnt.on('mouseout', function(){
+		mbox.style.visibility = "hidden";
+		over=false;
+	});
+	mnt.on('mouseover', function(){
+		mbox.style.visibility = "visible";
+		over=true;
+	});
+	lk = model.getChildByName( 'ID25', true );
+	lbox = document.getElementById("lake");
+	lk.on('mouseout', function(){
+		lbox.style.visibility = "hidden";
+		over=false;
+	});
+	lk.on('mouseover', function(){
+		lbox.style.visibility = "visible";
+		over=true;
+	});
+	fr = model.getChildByName( 'ID34', true );
+	fbox = document.getElementById("forest");
+	fr.on('mouseout', function(){
+		fbox.style.visibility = "hidden";
+		over=false;
+	});
+	fr.on('mouseover', function(){
+		fbox.style.visibility = "visible";
+		over=true;
+	});
+
+	scene.add( model );
+
+	// Lights
+	var ambient	= new THREE.AmbientLight( 0x333333,1 );
+	scene.add( ambient );
+	var light	= new THREE.SpotLight( 0xFFDDDD, 1.2 );
+	light.position = camera.position;
+	light.target.position.set( 0, 0, 0 );
+	scene.add( light );
+
+	// Renderer
+	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	container.appendChild( renderer.domElement );
+}
+
+function animate() {
+	if(rotate==true && over==false){
+		rot=0.005;	
+	} else if (rotate==false || over==true){
+		rot=rot*0.95;
+	}
+	model.rotation.y+=rot;	
+
+	renderer.render( scene, camera );
+	requestAnimationFrame( animate );
+}
+
+</script>
+</body>
+</html>

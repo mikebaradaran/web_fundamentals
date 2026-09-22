@@ -1,0 +1,1 @@
+//code//window.onload = function() {    insertScript();}

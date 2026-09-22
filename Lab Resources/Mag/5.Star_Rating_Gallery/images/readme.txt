@@ -1,0 +1,1 @@
+The images used in this tutorial have been sourced from http://sxc.hu and are the respective copyright of the artists in question.

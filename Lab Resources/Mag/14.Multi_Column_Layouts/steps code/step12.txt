@@ -1,0 +1,23 @@
+	
+	article header {
+		position:			relative;
+		display:			block;
+		-webkit-column-span:all;
+		column-span:		all;
+		border-bottom:		2px solid #333;			
+	}
+	
+	article header h1 {
+		font-size:			9.5em;
+		line-height:		1em;
+		font-weight:		bold;		
+		text-transform:		uppercase;
+		margin:				0;
+		padding:			0;
+	}
+	
+	article header h4 {
+		text-align:			right;
+		margin:				0;
+		padding:			0;	
+	}

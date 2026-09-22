@@ -1,0 +1,9 @@
+			var defaults = {  
+   				multiplier: 1.4,
+				lineheight: 1.4,
+				minWidth: 320,  
+   				maxWidth: 1200  
+  			}; 
+  			
+  			var uoptions = $.extend(defaults, options);
+			 

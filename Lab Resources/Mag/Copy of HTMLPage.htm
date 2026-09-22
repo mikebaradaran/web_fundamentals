@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script>
+        function scrollticker() {
+            mq.style.right = (parseInt(mq.style.right) > (-10 - aw)) ?
+            mq.style.right = parseInt(mq.style.right) + cps +
+            "px" : parseInt(tWidth) + 10 + "px";
+        } 
+
+    </script>
+</head>
+<body>
+    <div class="div1"></div>
+    <button id="btnAnimate" onclick="scrollticker()">Animate</button>
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+		#smallpanel h3 {
+			width:		477px;
+			margin:		0;
+			padding:	0;
+			font-size:	5em;
+			display:	block;
+			text-transform:capitalize;
+			color:		#8faabd;
+			color:		rgba(255,255,255,0.5);
+			font-weight:normal;
+			-webkit-transform-origin: 0 0;
+			-webkit-transform: rotate(90deg) translateY(-60px) translateX(20px);
+			-webkit-transition: all 0.3s linear;
+			cursor:		pointer;
+		}

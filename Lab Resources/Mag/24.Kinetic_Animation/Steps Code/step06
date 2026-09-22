@@ -1,0 +1,108 @@
+	/* KINETIC CSS3 ANIMATION */
+
+	#solarsystem ol {
+		position:		relative;
+		margin:			auto;
+		padding:		0;
+		width:			1000px;
+		height:			1000px;
+		border:			1px solid #333;
+		border-radius:	500px;
+	}
+	
+	#solarsystem li {
+		position:		relative;
+		display:		block;
+		text-indent:	-10000%;
+	}
+	
+	/* The Sun */
+	#solarsystem ol>li:nth-child(1) {
+		width:			100px;
+		height:			100px;
+		border-radius:	50px;
+		background:		red;
+	}
+	
+	/* Mercury */
+	#solarsystem ol>li:nth-child(2) {
+		width:			10px;
+		height:			10px;
+		border-radius:	5px;
+		background:		green;
+	}
+	
+	/* Venus */
+	#solarsystem ol>li:nth-child(3) {
+		width:			16px;
+		height:			16px;
+		border-radius:	8px;
+		background:		orange;
+	}
+	
+	
+	/* The Earth */
+	#solarsystem ol>li:nth-child(4) {
+		width:			20px;
+		height:			20px;
+		border-radius:	10px;
+		background:		blue;
+	}	
+	
+	
+	/* The Moon */
+	#solarsystem ol>li:nth-child(4) li {
+		width:			10px;
+		height:			10px;
+		border-radius:	5px;
+		background:		grey;
+		text-indent:	-100000px;
+	}
+	
+	/* Mars */
+	#solarsystem ol>li:nth-child(5) {
+		width:			14px;
+		height:			14px;
+		border-radius:	7px;
+		background:		red;	
+	}
+	
+	/* Jupiter */
+	#solarsystem ol>li:nth-child(6) {
+		width:			40px;
+		height:			40px;
+		border-radius:	20px;
+		background:		tan;	
+	}
+	
+	/* Saturn */
+	#solarsystem ol>li:nth-child(7) {
+		width:			36px;
+		height:			36px;
+		border-radius:	18px;
+		background:		green;	
+	}
+	
+	/* Uranus */
+	#solarsystem ol>li:nth-child(8) {
+		width:			32px;
+		height:			32px;
+		border-radius:	16px;
+		background:		orange;	
+	}	
+	
+	/* Neptune */
+	#solarsystem ol>li:nth-child(9) {
+		width:			30px;
+		height:			30px;
+		border-radius:	15px;
+		background:		aqua;	
+	}
+	
+	/* Pluto */
+	#solarsystem ol>li:nth-child(10) {
+		width:			6px;
+		height:			6px;
+		border-radius:	3px;
+		background:		grey;	
+	}

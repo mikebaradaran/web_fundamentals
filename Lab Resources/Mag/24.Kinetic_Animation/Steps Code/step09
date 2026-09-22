@@ -1,0 +1,39 @@
+	/* Mercury */
+	#solarsystem ol>li:nth-child(2) {
+		width:			10px;
+		height:			10px;
+		border-radius:	5px;
+		background:		green;
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-80px;
+		margin-top:		-5px;	
+		-webkit-transform-origin:80px 5px;
+		-moz-transform-origin:80px 5px; 	
+	}
+	
+
+	#solarsystem ol>li {
+    	-webkit-animation-iteration-count:infinite;
+    	-webkit-animation-timing-function:linear;
+    	-webkit-animation-name:orbitsun;
+    	-moz-animation-iteration-count:infinite;
+    	-moz-animation-timing-function:linear;
+    	-moz-animation-name:orbitsun;
+	}
+	
+	#solarsystem ol>li:nth-child(2) {
+		-webkit-animation-duration:5s; 
+		-moz-animation-duration:5s;
+	}
+		
+	@-webkit-keyframes orbitsun { 
+		from { -webkit-transform:rotate(0deg) } 
+		to { -webkit-transform:rotate(360deg) } 
+	}
+	
+	@-moz-keyframes orbitsun { 
+		from { -moz-transform:rotate(0deg) } 
+		to { -moz-transform:rotate(360deg) } 
+	}

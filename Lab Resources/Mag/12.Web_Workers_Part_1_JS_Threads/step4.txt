@@ -1,0 +1,2 @@
+//code//
+var aWorker = new Worker("worker.js");

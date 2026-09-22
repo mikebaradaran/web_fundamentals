@@ -1,0 +1,9 @@
+$.post("http://yourserver.com/getfriendlocations.php", { userid: localStorage.getItem("userid") }, function(data){
+					$.each(data.friend, function (i, afriend) {
+  						tmplat = afriend.lat;
+						tmplon = afriend.long;
+						tmppos = new google.maps.LatLng(tmplat, tmplon);
+						friendname = afriend.name;
+						$('#map').gmap('addMarker', { 'id': friendname, 'position': tmpposition, 'bounds': true });
+					});
+				}, "json");

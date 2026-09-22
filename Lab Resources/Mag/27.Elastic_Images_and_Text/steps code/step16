@@ -1,0 +1,5 @@
+				obj = $(this);
+				width = parseInt(obj.width());
+				if (width<uoptions.minWidth) width=uoptions.minWidth;
+				if (width>uoptions.maxWidth) width=uoptions.maxWidth;
+				fontSize = parseFloat(uoptions.multiplier*(width/uoptions.minWidth))+"em";

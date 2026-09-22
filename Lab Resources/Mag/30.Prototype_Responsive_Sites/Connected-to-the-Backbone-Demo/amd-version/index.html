@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My Tasks</title>
+	<style>
+	.completed { text-decoration: line-through; color: #666; }
+	</style>
+</head>
+<body>
+
+<h1>My Tasks</h1>
+
+<div id="tasks">
+	<button class="add">Add Task</button>
+	<button class="clear hide">Clear Completed</button>
+	<ul></ul>
+</div>
+
+<script id="taskTemplate" type="text/template">
+	<span class="<%= completed ? 'completed' : 'incomplete' %>"><%= text %></span>
+	<button class="complete">✓</button>
+	<button class="delete">✗</button>
+</script>
+
+<script data-main="assets/js/main" src="assets/js/libs/require.js"></script>
+
+</body>
+</html>

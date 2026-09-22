@@ -1,0 +1,24 @@
+		ul#nav li a h4 {
+			margin:		0;
+			padding:	0;
+			font-size:	3em;
+			display:	block;
+			text-transform:capitalize;
+			font-weight:normal;
+		}
+		
+		ul#nav li:hover a h4 {
+			-webkit-animation: slideFromTop 300ms ease-in-out;
+			-moz-animation: slideFromTop 300ms ease-in-out;
+			-ms-animation: slideFromTop 300ms ease-in-out;
+		}
+		
+		ul#nav li a span {
+			display:	block;
+		}
+		
+		ul#nav li:hover a span {
+			-webkit-animation: slideFromRight 300ms ease-in-out;
+			-moz-animation: slideFromRight 300ms ease-in-out;
+			-ms-animation: slideFromRight 300ms ease-in-out;
+		}

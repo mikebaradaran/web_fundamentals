@@ -1,0 +1,70 @@
+	/*
+		RESPONSIVE DESIGN WITH ELASTIC TEXT & IMAGES
+	*/
+	
+	body {
+		margin:				0;
+		padding:			0;
+		background:			#333;
+		color:				#ccc;
+		font-family:		helvetica, arial, sans-serif;
+		font-size:			62.5%;		
+	}
+	
+	header, aside, article, section, footer {
+		display:			block;
+	}
+
+	h1 {
+		text-transform:		uppercase;
+		color:				#fff;
+		font-weight:		normal;
+		margin:				0;
+		padding:			0;
+		margin-top:			30px;
+		text-align:			left;
+	}
+	
+	h2 {
+		text-transform:		uppercase;
+		color:				#F45E0B;
+		font-weight:		normal;
+		margin:				0px;
+		text-align:			left;
+		font-size:			2em;
+		margin-bottom:		10px;
+		padding-bottom:		0;
+	}
+	
+	header {
+		width:				90%;
+		min-width:			320px;
+		max-width:			1200px;
+		padding:			0px 5%;
+		margin:				auto;
+	}
+	
+	section {
+		position:			relative;
+		width:				90%;
+		min-width:			320px;
+		max-width:			1200px;
+		padding:			0px 5%;
+		margin:				auto;
+	}
+	
+	.intro {
+		margin-top:			0.2em;
+		padding-top:		0;
+		margin-bottom:		0;
+		font-size:			1.4em;
+	}
+	
+
+	article {
+		position:			relative;
+		line-height:		2em;
+		font-size:			1.4em;
+		min-height:			600px;
+	}
+	

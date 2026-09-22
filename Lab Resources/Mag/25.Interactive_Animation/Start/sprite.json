@@ -1,0 +1,5 @@
+{
+    "images": ["sprite.png"],
+    "frames": {"count": 60, "width": 94, "height": 158, "regX": 48, "regY": 147},
+    "animations": {"wkDown": [40, 59], "wkRight": [0, 19], "wkUp": [20, 39]}
+}

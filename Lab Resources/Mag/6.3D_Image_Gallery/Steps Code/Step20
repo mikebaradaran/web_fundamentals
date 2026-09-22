@@ -1,0 +1,3 @@
+$("#bottom img").click(function(){
+	$("#rotate").css({webkitTransform:"scale3d(1, 1, 1) rotateX(0deg) translateZ(0px)"});
+});

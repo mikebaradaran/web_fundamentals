@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<gallery>
+		<image>
+			<path>images/photo1.jpg</path>
+			<caption>An example image in our gallery</caption>
+			<rating>3.0</rating>
+			<numvotes>4</numvotes>
+			<hasvoted>false</hasvoted>
+		</image>
+		<image>
+			<path>images/photo2.jpg</path>
+			<caption>Another example of an image</caption>
+			<rating>2.2</rating>
+			<numvotes>15</numvotes>
+			<hasvoted>false</hasvoted>
+		</image>
+		<image>
+			<path>images/photo3.jpg</path>
+			<caption>The third image in our gallery!</caption>
+			<rating>1</rating>
+			<numvotes>1</numvotes>
+			<hasvoted>false</hasvoted>
+		</image>
+		<image>
+			<path>images/photo4.jpg</path>
+			<caption>A rather splendid image for our gallery</caption>
+			<rating>4.1</rating>
+			<numvotes>20</numvotes>
+			<hasvoted>false</hasvoted>
+		</image>				
+	</gallery>

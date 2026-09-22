@@ -1,0 +1,12 @@
+//code//
+var aWorker = new Worker("worker.js");
+aWorker.postMessage("ping");
+aWorker.onmessage = onWorkerMessage;
+
+function onWorkerMessage(evt) {
+    var data = evt.data;
+    if (data.message == "pong") {
+        document.getElementById("result").innerHTML = "Worker said " 
+            + data.message + ", count is: " + data.count + "<br>";
+    }
+}

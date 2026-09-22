@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Geolocation Directions</title>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<style type="text/css">
+body,html {
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#333;
+	background:url(images/bg.jpg);
+	line-height:135%;
+	margin: 0px;
+}
+header {
+	display: block;
+	height: 90px;
+	padding-bottom: 40px;		
+}
+#content {
+	background:url(images/content-bg.png) 0 0 repeat-x;
+}
+#map {
+	padding: 0;
+	height: 350px;
+	width: 960px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	border: 1px solid #666;
+}
+#logo{
+	width:960px;
+	margin-right: auto;	
+	margin-left:auto;
+}
+article{
+	width:960px;
+	display: block;
+	padding-top: 30px;
+	margin-right: auto;	
+	margin-left:auto;
+}
+#directions {
+	float:left;
+	margin: 0;
+	padding-left: 20px;
+	width: 650px;
+}
+aside{
+	float: right;
+	width: 250px;
+	padding-left: 20px;
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #333;
+}
+h2{
+	color:#39C;
+}
+</style>
+<script>
+var map;
+var directionRenderer;
+var directionsService = new google.maps.DirectionsService();
+
+$(document).ready(function () {
+	var loc = new google.maps.LatLng(55, -1.5);
+    var myOptions = {
+        zoom: 5,
+		center: loc,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        
+    }
+	map = new google.maps.Map(document.getElementById("map"), myOptions);
+	directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
+	directionsRenderer.setPanel(document.getElementById("directions"));
+    // test for presence of geolocation
+   	if (navigator && navigator.geolocation) {
+    	navigator.geolocation.getCurrentPosition(geo_success, geo_error);
+    } else {
+        alert('Geolocation not supported.');
+    }
+});
+ 
+function geo_success(position) {
+    getLoc(position.coords.latitude, position.coords.longitude);
+}
+
+function geo_error(err) {
+    if (err.code == 1) {
+        alert('Location information denied by user.');
+    } else if (err.code == 2) {
+        alert('Location information is unavailable.');
+    } else if (err.code == 3) {
+        alert('Location information timed out.');
+    } else {
+        alert('An unknown error occurred.');
+    }
+}
+ 
+// output lat and long
+function getLoc(lat, long) {
+	//var loc = new google.maps.LatLng(lat, long);
+	$('#directions').append('<p>Lat: ' + lat + '</p>');
+    $('#directions').append('<p>Long: ' + long + '</p>');
+	//put route stuff in here.
+	var startPos = new google.maps.LatLng(lat, long);
+	var endPos = new google.maps.LatLng(50.7220, -1.8780);
+	
+	var request = {
+     	origin: startPos,
+        destination: endPos,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+ 	directionsService.route(request, function (result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+ 
+             // Display the directions using Google's Directions
+             // Renderer.
+        	 directionsRenderer.setDirections(result);
+
+          } else {
+             error("Directions failed due to: " + status);
+          }
+    });
+ 
+}
+
+</script>
+</head>
+
+<body>
+<div id="content">
+	<header>
+		<div id="logo"><img src="images/logo.png" width="284" height="80" alt="square design studios logo"></div>
+	</header>
+	<div id="map"></div>
+	<article>
+		<div id="directions"><h2>Directions</h2></div>
+		<aside>
+  			<h2>Contact</h2>
+  			<p>21 Richmond Hill<br>
+  	  		Bournemouth<br>
+    		Dorset
+  			</p>
+  			<p>Tel:01202 123987</p>
+		</aside>
+	<article>
+</div>
+</body>
+</html>

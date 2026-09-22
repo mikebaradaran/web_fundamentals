@@ -1,0 +1,4 @@
+		ul#nav li:hover {
+			background:			#dcebeb	;
+			z-index:	1000;
+		}

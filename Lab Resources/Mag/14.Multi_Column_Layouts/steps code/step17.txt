@@ -1,0 +1,10 @@
+	article footer {
+		position:			relative;
+		display:			block;	
+		-webkit-column-span:all;			
+		column-span:		all;
+		border-top:			2px solid #333;
+		border-bottom:		2px solid #333;
+		padding:			10px;
+		margin-bottom:		20px;
+	}

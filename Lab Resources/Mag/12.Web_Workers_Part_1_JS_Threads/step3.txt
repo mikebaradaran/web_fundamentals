@@ -1,0 +1,2 @@
+//code//
+postMessage("hello main page");

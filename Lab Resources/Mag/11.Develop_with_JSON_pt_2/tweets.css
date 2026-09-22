@@ -1,0 +1,30 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	width: 400px;
+}
+
+ul li {
+	display: table;
+	padding: 10px 3px 10px 3px;
+	border-bottom: 1px solid #bbbbbb;
+}
+
+ul li div.tweetImage {
+	display: table-cell;
+	vertical-align: top;
+}
+
+ul li div.tweet {
+	display: table-cell;
+	padding-left: 10px;
+}
+
+ul li span.tweetDate {
+	color: #737373;
+}

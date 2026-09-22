@@ -1,0 +1,1 @@
+$.post("http://yourserver.com/setlocation.php", { userid: localStorage.getItem("userid"), latitude: lat, longitude: lon });

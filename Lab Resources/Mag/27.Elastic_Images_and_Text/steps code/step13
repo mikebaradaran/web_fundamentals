@@ -1,0 +1,14 @@
+	(function($){ 
+		$.fn.pluginName = function(options) {
+			var defaults = {  
+   				property1: 1,
+				property2: "something
+  			}; 
+			
+			var uoptions = $.extend(defaults, options);
+			 
+			return this.each(function(){
+				// Do something to the elements the function is called on
+			});
+		}
+	})(jQuery);	

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Animated sprite sheet with Easel.JS - Web Designer Magazine</title>
+<script src="lib/easel.js"></script>
+<style type="text/css">
+
+#canvas {
+	background-image: url(img/bg.jpg);
+	background-repeat: no-repeat;
+}
+body {
+	background-color: #000;
+}
+</style>
+<script>
+var canvas;
+var stage;
+
+var img;
+var player;
+var lfHeld;
+var rtHeld;
+var keyDn=false;
+
+document.onkeydown=handleKeyDown;
+document.onkeyup=handleKeyUp;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	stage = new Stage(canvas);
+	img = new Image();
+	img.src = "img/sprite.png";
+	img.onload = handleImageLoad;
+}
+
+function handleImageLoad(event) {
+	var w = canvas.width;
+	var h = canvas.height;
+	var spriteSheet  = new SpriteSheet({
+		images: [img],
+		frames: {"count": 60, "width": 94, "height": 158, "regX": 48.5, "regY": 147.45},
+		animations: {
+			wkRight: [0, 19, "wkRight"], 
+			wkUp: [20, 39, "wkUp"], 
+			wkDown: [40, 59, "wkDown"]
+		}
+	});
+	SpriteSheetUtils.addFlippedFrames(spriteSheet, true, false, false);
+	player = new BitmapAnimation(spriteSheet);
+	player.gotoAndStop("wkRight");		
+	player.x = canvas.width/2;
+	player.y = 350;
+	stage.addChild(player);
+	Ticker.addListener(window);
+	Ticker.setFPS ( 30 );
+}
+function handleImageError(e) {
+	console.log("Error Loading Image : " + e.target.src);
+}
+
+function tick() {
+	if(lfHeld){
+		player.x-=5;
+	}
+	if(rtHeld){
+		player.x+=5;
+	}
+	if(lfHeld && keyDn==false){
+		player.gotoAndPlay("wkRight_h");
+		keyDn=true;
+	}
+	if(rtHeld && keyDn==false){
+		player.gotoAndPlay("wkRight");
+		keyDn=true;
+	}	
+	stage.update();
+}
+function handleKeyDown(e) {
+	if(!e){ var e = window.event; }
+	switch(e.keyCode) {
+		case 37:	lfHeld = true; break;
+		case 39: 	rtHeld = true; break;
+	}
+}
+function handleKeyUp(e) {
+	if(!e){ var e = window.event; }
+	switch(e.keyCode) {
+		case 37:	player.gotoAndStop("wkRight_h");keyDn=false;lfHeld = false; break;
+		case 39: 	player.gotoAndStop("wkRight");keyDn=false;rtHeld = false; break;
+	}
+}
+
+</script>
+</head>
+
+<body onload="init();">
+	<canvas id="canvas" width="960" height="435"></canvas>
+</body>
+</html>

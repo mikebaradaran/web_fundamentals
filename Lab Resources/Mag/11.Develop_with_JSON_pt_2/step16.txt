@@ -1,0 +1,1 @@
+//code//function insertScript() {    var head = document.getElementsByTagName("head")[0];    var src = "http://twitter.com/statuses/user_timeline/webdesignermag.json?callback=processData";    var jsonScript = document.createElement("script");    jsonScript.setAttribute("src", src);    head.appendChild(jsonScript);}

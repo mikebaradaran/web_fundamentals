@@ -1,0 +1,30 @@
+<!DOCTYPE HTML><html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>CSS3 Kinetic Animation</title>
+		<link rel="stylesheet" type="text/css" href="styles/screen.css">
+	</head><body>
+		<div id="container">
+			<h1>CSS3 Kinetic Animation</h1>
+			
+			<div id="solarsystem">
+				<ol>
+					<li>Sun</li>
+					<li>Mercury</li>
+					<li>Venus</li>
+					<li>Earth
+						<ul>
+							<li>Moon</li>
+						</ul>
+					</li>
+					<li>Mars</li>
+					<li>Jupiter</li>
+					<li>Saturn</li>
+					<li>Uranus</li>
+					<li>Neptune</li>
+					<li>Pluto</li>
+				</ol>
+			</div>
+		</div>
+	
+
+</body></html>

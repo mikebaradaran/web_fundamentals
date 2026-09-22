@@ -1,0 +1,8 @@
+//code//
+var aWorker = new Worker("worker.js");
+aWorker.onmessage = onWorkerMessage;
+
+function onWorkerMessage(evt)
+{
+	// message handling code will go here
+}

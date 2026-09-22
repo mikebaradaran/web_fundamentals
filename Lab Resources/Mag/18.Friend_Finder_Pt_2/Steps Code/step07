@@ -1,0 +1,10 @@
+			<div data-role="footer" id="navbar" data-position="fixed">		
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#mappage">Map</a></li>
+						<li><a href="#login">Log In</a></li>
+						<li><a href="#invite">Invite</a></li>
+						<li><a href="#auth">Authorise</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->

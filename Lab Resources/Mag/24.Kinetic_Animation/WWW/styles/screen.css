@@ -1,0 +1,332 @@
+	/* KINETIC CSS3 ANIMATION */
+
+	body {
+		background:		#333 url(containerbg.jpg) no-repeat center center;
+		color:			#cfcfcf;
+		font-family: 	'Wallpoet', sans-serif;
+		text-transform:	uppercase;
+	}
+	
+	#container {
+		text-align:		center;	
+	}
+	
+	h1 {
+		width:			100%;
+		padding:		10px;
+		background:		#1a1a1a;
+		border-top:		2px solid #999;
+		border-bottom:	2px solid #999;
+		text-shadow:	2px 2px 0px #666;
+		-webkit-box-shadow:		0px 0px 30px #000;
+		-moz-box-shadow:		0px 0px 30px #000;
+		box-shadow:		0px 0px 30px #000;
+	}
+	
+	h2 {
+		font-size:		1.2em;
+	}
+
+	#solarsystem ol {
+		position:		relative;
+		margin:			auto;
+		padding:		0;
+		width:			1000px;
+		height:			1000px;
+		background:		#000 url(starfield.jpg) no-repeat top left;
+		border:			3px solid #999;
+		-webkit-box-shadow:		0px 0px 30px #000;
+		-moz-box-shadow:		0px 0px 30px #000;
+		box-shadow:		0px 0px 30px #000;
+		border-radius:	500px;
+		-webkit-transform-origin:0% 0%;
+		-moz-transform-origin:0% 0%; 
+	}
+	
+	#solarsystem li {
+		position:		relative;
+		display:		block;
+		text-indent:	-100000%;
+	}
+	
+	/* The Sun */
+	#solarsystem ol>li:nth-child(1) {
+		width:			100px;
+		height:			100px;
+		border-radius:	50px;
+		background:		red url(sun.jpg) no-repeat top left;
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-50px;
+		margin-top:		-50px;
+		-webkit-box-shadow:	0px 0px 20px #fc9d34;
+		-moz-box-shadow:	0px 0px 20px #fc9d34;
+		box-shadow:	0px 0px 20px #fc9d34;
+	}
+	
+	/* Mercury */
+	#solarsystem ol>li:nth-child(2) {
+		width:			10px;
+		height:			10px;
+		border-radius:	5px;
+		background:		green url(mercury.jpg) no-repeat top left;
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-80px;
+		margin-top:		-5px;	
+		-webkit-transform-origin:80px 5px;
+		-moz-transform-origin:80px 5px; 	
+	}
+	
+	/* Venus */
+	#solarsystem ol>li:nth-child(3) {
+		width:			16px;
+		height:			16px;
+		border-radius:	8px;
+		background:		orange url(venus.jpg) no-repeat top left;
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-110px;
+		margin-top:		-8px;	
+		-webkit-transform-origin:110px 8px;
+		-moz-transform-origin:110px 8px; 					
+	}
+	
+	
+	/* The Earth */
+	#solarsystem ol>li:nth-child(4) {
+		width:			20px;
+		height:			20px;
+		border-radius:	10px;
+		background:		blue url(earth.jpg) no-repeat top left;
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-150px;
+		margin-top:		-10px;		
+		-webkit-transform-origin:150px 10px;
+		-moz-transform-origin:150px 10px; 				
+	}	
+	
+	
+	/* The Moon */
+	#solarsystem ol>li:nth-child(4) li {
+		width:			10px;
+		height:			10px;
+		border-radius:	5px;
+		text-indent:	-100000px;
+		position:		absolute;
+		top:			10px;
+		left:			10px;
+		margin-left:	-30px;
+		margin-top:		-5px;	
+		-webkit-transform-origin:30px 5px;
+		-moz-transform-origin:30px 5px; 		
+	}
+	
+	#solarsystem ol>li:nth-child(4) li span {
+		width:			10px;
+		height:			10px;
+		border-radius:	5px;
+		position:		absolute;
+		top:			0;
+		left:			0;
+		display:		block;
+		background:		grey url(moon.jpg) no-repeat top left;
+	}
+	
+	
+	/* Mars */
+	#solarsystem ol>li:nth-child(5) {
+		width:			14px;
+		height:			14px;
+		border-radius:	7px;
+		background:		red url(mars.jpg) no-repeat top left;	
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-185px;
+		margin-top:		-7px;	
+		-webkit-transform-origin:185px 7px;
+		-moz-transform-origin:185px 7px; 			
+	}
+	
+	/* Jupiter */
+	#solarsystem ol>li:nth-child(6) {
+		width:			40px;
+		height:			40px;
+		border-radius:	20px;
+		background:		tan url(jupiter.jpg) no-repeat top left;	
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-240px;
+		margin-top:		-20px;	
+		-webkit-transform-origin:240px 20px;
+		-moz-transform-origin:240px 20px; 			
+	}
+	
+	/* Saturn */
+	#solarsystem ol>li:nth-child(7) {
+		width:			36px;
+		height:			36px;
+		border-radius:	18px;
+		background:		green url(saturn.jpg) no-repeat top left;	
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-300px;
+		margin-top:		-18px;	
+		-webkit-transform-origin:300px 18px;
+		-moz-transform-origin:300px 18px; 		
+	}
+	
+	/* Uranus */
+	#solarsystem ol>li:nth-child(8) {
+		width:			32px;
+		height:			32px;
+		border-radius:	16px;
+		background:		orange url(uranus.jpg) no-repeat top left;	
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-360px;
+		margin-top:		-16px;	
+		-webkit-transform-origin:360px 16px;
+		-moz-transform-origin:360px 16px; 			
+	}	
+	
+	/* Neptune */
+	#solarsystem ol>li:nth-child(9) {
+		width:			30px;
+		height:			30px;
+		border-radius:	15px;
+		background:		aqua url(neptune.jpg) no-repeat top left;
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-420px;
+		margin-top:		-15px;	
+		-webkit-transform-origin:420px 15px;
+		-moz-transform-origin:420px 15px; 				
+	}
+	
+	/* Pluto */
+	#solarsystem ol>li:nth-child(10) {
+		width:			6px;
+		height:			6px;
+		border-radius:	3px;
+		background:		grey url(pluto.jpg) no-repeat top left;	
+		position:		absolute;
+		top:			500px;
+		left:			500px;
+		margin-left:	-480px;
+		margin-top:		-3px;	
+		-webkit-transform-origin:480px 3px;
+		-moz-transform-origin:480px 3px; 			
+	}
+	
+	
+	
+	
+	#solarsystem ol li  {
+		-webkit-animation-iteration-count:infinite;
+    	-webkit-animation-timing-function:linear;
+    	-webkit-animation-name:orbitsun;
+    	-moz-animation-iteration-count:infinite;
+    	-moz-animation-timing-function:linear;
+    	-moz-animation-name:orbitsun;
+	}
+	
+	#solarsystem ol li span {
+    	-webkit-animation-iteration-count:infinite;
+    	-webkit-animation-timing-function:linear;
+    	-webkit-animation-name:reverseorbitsun;
+    	-moz-animation-iteration-count:infinite;
+    	-moz-animation-timing-function:linear;
+    	-moz-animation-name:reverseorbitsun;
+	}
+	
+	#solarsystem ol>li:nth-child(1) {
+		-webkit-animation-duration:300s; 
+		-moz-animation-duration:300s;
+	}
+	
+	#solarsystem ol>li:nth-child(2) {
+		-webkit-animation-duration:15s; 
+		-moz-animation-duration:15s;
+	}
+	
+	#solarsystem ol>li:nth-child(3) {
+		-webkit-animation-duration:20s; 
+		-moz-animation-duration:20s;
+	}	
+	
+	#solarsystem ol>li:nth-child(4) {
+		-webkit-animation-duration:24s; 
+		-moz-animation-duration:24s;
+	}	
+	
+	/* The Moon */
+	#solarsystem ol>li:nth-child(4) li {
+		-webkit-animation-duration:2s; 
+		-moz-animation-duration:2s;
+	}
+	
+	#solarsystem ol>li:nth-child(4) li span {
+		-webkit-animation-duration:2s; 
+		-moz-animation-duration:2s;
+	}
+	
+	#solarsystem ol>li:nth-child(5) {
+		-webkit-animation-duration:30s; 
+		-moz-animation-duration:30s;
+	}	
+	
+	#solarsystem ol>li:nth-child(6) {
+		-webkit-animation-duration:45s; 
+		-moz-animation-duration:45s;
+	}	
+	
+	#solarsystem ol>li:nth-child(7) {
+		-webkit-animation-duration:70s; 
+		-moz-animation-duration:70s;
+	}
+	
+	#solarsystem ol>li:nth-child(8) {
+		-webkit-animation-duration:100s; 
+		-moz-animation-duration:100s;
+	}
+	
+	#solarsystem ol>li:nth-child(9) {
+		-webkit-animation-duration:130s; 
+		-moz-animation-duration:130s;
+	}
+	
+	#solarsystem ol>li:nth-child(10) {
+		-webkit-animation-duration:170s; 
+		-moz-animation-duration:170s;
+	}	
+	
+	@-webkit-keyframes orbitsun { 
+		from { -webkit-transform:rotate(0deg) } 
+		to { -webkit-transform:rotate(360deg) } 
+	}
+	
+	@-moz-keyframes orbitsun { 
+		from { -moz-transform:rotate(0deg) } 
+		to { -moz-transform:rotate(360deg) } 
+	}
+	
+	@-webkit-keyframes reverseorbitsun { 
+		from { -webkit-transform:rotate(0deg) } 
+		to { -webkit-transform:rotate(-360deg) } 
+	}
+	
+	@-moz-keyframes reverseorbitsun { 
+		from { -moz-transform:rotate(0deg) } 
+		to { -moz-transform:rotate(-360deg) } 
+	}

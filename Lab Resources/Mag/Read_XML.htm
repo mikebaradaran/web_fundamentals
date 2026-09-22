@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            xmlDoc = loadXMLDoc("bookstore.xml");
+            var info="";
+            x = xmlDoc.getElementsByTagName("title");
+            var d = $('#div1');
+            for (i = 0; i < x.length; i++) {
+               info += "<br />" + x[i].childNodes[0].nodeValue;
+            }
+
+            var prices = xmlDoc.getElementsByTagName("price");
+            for (i = 0; i < prices.length; i++) {
+                info +=  "<br />" + prices[i].childNodes[0].nodeValue;
+            }
+            d.html(info);
+        });
+
+        function loadXMLDoc(dname) {
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            }
+            else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.open("GET", dname, false);
+            xhttp.send();
+            return xhttp.responseXML;
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" style="background: #cccccc; width: 200px; height: 200px; position: relative">
+        Hello World</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+	/* KINETIC CSS3 ANIMATION */
+
+	#solarsystem {
+		position:		relative;
+		margin:			auto;
+		padding:		0;
+		width:			1000px;
+		height:			1000px;
+	}
+	
+	#solarsystem li:nth-child(1) {
+		width:			100px;
+		height:			100px;
+		background:		red;
+	}

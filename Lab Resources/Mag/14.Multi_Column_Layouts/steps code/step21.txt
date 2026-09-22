@@ -1,0 +1,26 @@
+	@media all and (max-width: 519px) {
+		article {
+			position:			relative;
+			width:				90%;
+			margin:				auto;
+			padding:			20px;
+			-webkit-column-count:1;
+			-moz-column-count:	1;
+			-o-column-count:	1;
+			-ms-column-count:	1;
+			column-count: 		1;
+			padding:			10px;
+			background:			white;
+			box-shadow:			0px 0px 10px #333;
+		}	
+	
+		article header h1 {
+			font-size:			3em;
+			line-height:		1em;
+			font-weight:		bold;		
+			text-transform:		uppercase;
+			margin:				0;
+			padding:			0;
+		}	
+		
+	}		

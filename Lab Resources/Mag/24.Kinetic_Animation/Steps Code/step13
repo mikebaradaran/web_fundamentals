@@ -1,0 +1,28 @@
+	#solarsystem ol>li {
+    	-webkit-animation-iteration-count:infinite;
+    	-webkit-animation-timing-function:linear;
+    	-webkit-animation-name:orbitsun;
+    	-moz-animation-iteration-count:infinite;
+    	-moz-animation-timing-function:linear;
+    	-moz-animation-name:orbitsun;
+	}
+	
+	#solarsystem ol>li:nth-child(2) {
+		-webkit-animation-duration:5s; 
+		-moz-animation-duration:5s;
+	}
+	
+	#solarsystem ol>li:nth-child(3) {
+		-webkit-animation-duration:10s; 
+		-moz-animation-duration:10s;
+	}	
+	
+	@-webkit-keyframes orbitsun { 
+		from { -webkit-transform:rotate(0deg) } 
+		to { -webkit-transform:rotate(360deg) } 
+	}
+	
+	@-moz-keyframes orbitsun { 
+		from { -moz-transform:rotate(0deg) } 
+		to { -moz-transform:rotate(360deg) } 
+	}

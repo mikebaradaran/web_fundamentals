@@ -1,0 +1,38 @@
+			lat = 54;
+			lon = -1;
+			deviceposition = new google.maps.LatLng(lat, lon);
+			var t = setInterval(function(){
+				navigator.geolocation.getCurrentPosition(useposition); 
+			},10000);
+			
+			function useposition(position){  
+				lat = position.coords.latitude;
+				lon = position.coords.longitude;   
+				deviceposition = new google.maps.LatLng(lat, lon);
+				var marker = $('#map').gmap('get', 'markers > client' );
+				if ( !marker ) {
+					$('#map').gmap('addMarker', { 'id': 'client', 'position': deviceposition, 'bounds': true });
+				} else {
+					 marker.setPosition(deviceposition);
+				}
+				themap.panTo(deviceposition);
+				// Update the server with your location
+				$.post("http://yourserver.com/setlocation.php", { userid: localStorage.getItem("userid"), latitude: lat, longitude: lon });
+				
+				// Get your friends' locations
+				$.post("http://yourserver.com/getfriendlocations.php", { userid: localStorage.getItem("userid") }, function(data){
+					$.each(data.friend, function (i, afriend) {
+  						tmplat = afriend.lat;
+						tmplon = afriend.long;
+						tmppos = new google.maps.LatLng(tmplat, tmplon);
+						friendname = afriend.name;
+						$('#map').gmap('addMarker', { 'id': friendname, 'position': tmpposition, 'bounds': true });
+					});
+				}, "json");
+			}
+			
+			// Create the map
+			$("#map").gmap({'center': deviceposition, 'zoom': 12, 'disableDefaultUI': true, 'mapTypeId': 'terrain'}).bind('init', function(ev, map) { themap = map;});
+			$('#map').gmap('addMarker', { 'id': 'client', 'position': deviceposition, 'bounds': true });
+			
+		});	

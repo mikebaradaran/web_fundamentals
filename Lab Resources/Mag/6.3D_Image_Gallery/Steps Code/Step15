@@ -1,0 +1,3 @@
+				$("#container").css({height:winheight});
+				$("#bottom").css({webkitTransform: "rotateX(-90deg) translateZ(-"+(winheight/2)+"px) translateY("+(winheight/2)+"px)",height:winheight})
+				

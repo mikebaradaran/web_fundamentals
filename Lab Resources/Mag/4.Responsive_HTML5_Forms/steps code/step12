@@ -1,0 +1,41 @@
+	input:focus { 
+		border: 			2px solid #33c400; 
+		-webkit-box-shadow:	none; 
+		-moz-box-shadow: 	none; 
+		box-shadow: 		none; 
+	}
+	
+	input[type=date],
+	input[type=number],
+	input[type=submit] { 
+		-moz-border-radius:  0px; 
+		-webkit-border-radius:  0px; 
+		border-radius:  		0px; 
+		width: 				auto; 
+	}
+	
+		input[type=submit] { 
+		background: 		#F2D99C; 
+		display: 			inline-block; 
+		padding: 			5px 10px 6px; 
+		color: 				#690011; 
+		text-decoration: 	none; 
+		font-weight: 		bold;  
+		border: 			none; 
+		position: 			relative; 
+		cursor: 			pointer; 
+		font-size: 			2.0em; 
+		margin-top:			30px;
+		font-family: 		'Oleo Script', Helvetica, Arial;
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px; 
+		-ms-border-radius: 	5px; 
+		border-radius: 		5px; 
+		-moz-box-shadow: 	0 1px 3px #999; 
+		-webkit-box-shadow: 0 1px 3px #999; 
+		-ms-box-shadow: 	0 1px 3px #999; 
+		box-shadow: 		0 1px 3px #999; 
+		text-shadow: 		0 -1px 1px #fff; 		
+		-webkit-transition: all 0.2s linear
+	}
+	

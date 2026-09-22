@@ -1,0 +1,39 @@
+	/* KINETIC CSS3 ANIMATION */
+
+	#solarsystem {
+		position:		relative;
+		margin:			auto;
+		padding:		0;
+		width:			1000px;
+		height:			1000px;
+	}
+	
+	#solarsystem ol li {
+		display:		block;
+		overflow:		hidden;
+		text-indent:	-100%;
+	}
+	
+	#solarsystem ol>li:nth-child(1) {
+		width:			100px;
+		height:			100px;
+		background:		red;
+	}
+	
+	#solarsystem ol>li:nth-child(2) {
+		width:			10px;
+		height:			10px;
+		background:		green;
+	}
+	
+	#solarsystem ol>li:nth-child(3) {
+		width:			15px;
+		height:			15px;
+		background:		orange;
+	}
+	
+	#solarsystem ol>li:nth-child(4) {
+		width:			20px;
+		height:			20px;
+		background:		blue;
+	}	

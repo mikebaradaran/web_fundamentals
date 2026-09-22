@@ -1,0 +1,14 @@
+//code//
+//<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>Simple Web Workers</title>
+<script>
+// code to create a worker will go here
+</script>
+</head>
+<body>
+    <div id="result">
+    </div>
+</body>
+</html>

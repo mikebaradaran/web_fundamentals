@@ -1,0 +1,22 @@
+	/* CSS Multi-Column Layouts */
+	
+	body {
+		background:			#444;
+		font-family:		georgia, times, serif;
+		font-size:			62.5%;	
+		line-height:		1.4em;
+	}
+	
+	article {
+		position:			relative;
+		margin:				auto;
+		width:				920px;
+		padding:			20px;
+		background:			white;
+		box-shadow:			0px 0px 10px #333;
+	}
+	
+	article p {
+		font-size:			1.2em;
+		line-height:		1.6em;
+	}

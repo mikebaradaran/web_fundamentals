@@ -1,0 +1,36 @@
+		<div data-role="page" id="mappage">
+			<div data-role="header">
+				<h1>Find Friends!</h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<div id="map"></div>	
+			</div><!-- /content -->
+		</div><!-- /page -->
+		<div data-role="page" id="login">
+			<div data-role="header">
+				<h1>Log In</h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<form id="login">
+					<label for="username">Username: <input type="email" id="email" /></label>
+					<label for="password">Password: <input type="password" id="password" /></label>
+					<input type="button" value="Log In" />				
+				</form>	
+			</div><!-- /content -->
+		</div><!-- /page -->
+		<div data-role="page" id="invite">
+			<div data-role="header">
+				<h1>Invite Friends</h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<p>Integrate your invitation code here</p>
+			</div><!-- /content -->
+		</div><!-- /page -->
+		<div data-role="page" id="auth">
+			<div data-role="header">
+				<h1>Authorise Friends</h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<p>Integrate your authorisation code here</p>
+			</div><!-- /content -->
+		</div><!-- /page -->

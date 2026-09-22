@@ -1,0 +1,33 @@
+		div#panel {
+			margin: 	0 1px;
+			width:		560px;
+			height:		477px;
+			float:		left;
+			border:		2px solid #cfcfcf;
+			background: #fefefe;
+			-webkit-box-shadow: 0px 0px 4px #ccc;
+			box-shadow: 0px 0px 4px #ccc;
+		}
+		
+		div#smallpanel {
+			margin: 	0 1px;
+			width:		60px;
+			height:		477px;
+			float:		left;
+			border:		2px solid #cfcfcf;
+			background: #efefef;
+			-webkit-box-shadow: 0px 0px 4px #ccc;
+			box-shadow: 0px 0px 4px #ccc;
+		}
+		
+		#smallpanel h3 {
+			width:		477px;
+			margin:		0;
+			padding:	0;
+			font-size:	5em;
+			display:	block;
+			text-transform:capitalize;
+			color:		#8faabd;
+			color:		rgba(255,255,255,0.5);
+			font-weight:normal;
+		}

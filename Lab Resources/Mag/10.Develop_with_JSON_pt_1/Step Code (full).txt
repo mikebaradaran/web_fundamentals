@@ -1,0 +1,215 @@
+STEP 1
+//code//
+var dog = {};
+dog.name = "fido";
+dog.weight = 28;
+
+
+STEP 2
+//code//
+jsonDog = JSON.stringify(dog);
+
+
+STEP 3
+//code//
+var dog = { 
+     name: "fido", 
+     weight: 28,
+     bark: function() { return "Woof!"; }
+};
+
+
+STEP 4
+//code//
+var aNewDog = JSON.parse(jsonDog);
+
+
+STEP 7
+//code//
+window.onload = function() {
+	var submitButton = document.getElementById("submit");
+	submitButton.onclick = createNote;
+}
+
+
+STEP 8
+//code//
+function createNote() {
+    var noteText = document.getElementById("note");
+    text = noteText.value;
+    if (text == null || text == "" || text.length == 0) {
+        alert("Please enter a note!");
+        return;
+    }
+
+    var colorSelect = document.getElementById("color");
+    var index = colorSelect.selectedIndex;
+    var color = colorSelect[index].value;
+}
+
+
+STEP 9
+//code//
+var notes = [];  // creates an empty notes array
+
+//code//
+function createNote() {
+    var noteText = document.getElementById("note");
+    text = noteText.value;
+    if (text == null || text == "" || text.length == 0) {
+        alert("Please enter a note!");
+        return;
+    }
+
+    var colorSelect = document.getElementById("color");
+    var index = colorSelect.selectedIndex;
+    var color = colorSelect[index].value;
+
+    var note = {};
+    note.text = text;
+    note.color = color;
+    notes.push(note);
+}
+
+
+STEP 10
+//code1//
+function createNote() {
+    var noteText = document.getElementById("note");
+    text = noteText.value;
+    if (text == null || text == "" || text.length == 0) {
+        alert("Please enter a note!");
+        return;
+    }
+
+    var colorSelect = document.getElementById("color");
+    var index = colorSelect.selectedIndex;
+    var color = colorSelect[index].value;
+
+    var note = {};
+    note.text = text;
+    note.color = color;
+    notes.push(note);
+
+    addNoteToPage(note);
+}
+
+
+//code2//
+function addNoteToPage(note) {
+    var notesUl = document.getElementById("notes");
+    var li = document.createElement("li");
+    li.innerHTML = note.text;
+    li.style.backgroundColor = note.color;
+    if (notesUl.childElementCount > 0) {
+        notesUl.insertBefore(li, notesUl.firstChild);
+    } else {
+        notesUl.appendChild(li);
+    }
+}
+
+
+STEP 12
+//code//
+window.onload = function() {
+    var submitButton = document.getElementById("submit");
+    submitButton.onclick = createNote;
+    if (!window.localStorage) {
+        alert("The Web Storage API is not supported.");
+    }
+}
+
+
+STEP 13
+//code//
+function createNote() {
+    var noteText = document.getElementById("note");
+    text = noteText.value;
+    if (text == null || text == "" || text.length == 0) {
+        alert("Please enter a note!");
+        return;
+    }
+
+    var colorSelect = document.getElementById("color");
+    var index = colorSelect.selectedIndex;
+    var color = colorSelect[index].value;
+
+    var note = {};
+    note.text = text;
+    note.color = color;
+    notes.push(note);
+   
+    storeNotes();
+
+    addNoteToPage(note);
+}
+
+
+STEP 14
+//code1//
+var key = "webdesignerNotes";
+
+//code2//
+function storeNotes() {
+   // code to store the notes will go here in the next step
+}
+
+
+STEP 15
+//code//
+function storeNotes() {
+    var jsonNotes = JSON.stringify(notes);
+}
+
+
+STEP 16
+//code//
+function storeNotes() {
+    var jsonNotes = JSON.stringify(notes);
+    localStorage.setItem(key, jsonNotes);
+}
+
+
+STEP 18
+//code//
+window.onload = function() {
+    var submitButton = document.getElementById("submit");
+    submitButton.onclick = createNote;
+    if (!window.localStorage) {
+        alert("The Web Storage API is not supported.");
+    } else {
+        loadNotes();
+    }
+}
+
+
+STEP 19
+//code//
+function loadNotes() {
+    var jsonNotes = localStorage.getItem(key);
+}
+
+
+STEP 20
+//code//
+function loadNotes() {
+    var jsonNotes = localStorage.getItem(key);
+    if (jsonNotes != null) {
+        notes = JSON.parse(jsonNotes);
+    }
+}
+
+
+STEP 21
+//code//
+function loadNotes() {
+    var jsonNotes = localStorage.getItem(key);
+    if (jsonNotes != null) {
+        notes = JSON.parse(jsonNotes);
+        for (var i = 0; i < notes.length; i++) {
+            addNoteToPage(notes[i]);
+        }
+    }
+}
+
+

@@ -1,0 +1,1 @@
+$("#map").gmap({'center': deviceposition, 'zoom': 12, 'disableDefaultUI': true, 'mapTypeId': 'terrain'}).bind('init', function(ev, map) { themap = map;});

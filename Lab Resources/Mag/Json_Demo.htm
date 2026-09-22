@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .rotateMexxxxx
+        {
+            -webkit-transform-origin: 50px 50px;
+            -webkit-transform: rotate(45deg);
+            -webkit-box-shadow: 0px 2px 7px #999;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var deg = 1;
+            $('.rotateMe').css('-webkit-transform-origin', '-300px 100px');
+            //var int = self.setInterval(function () { rotate() }, 100);
+            function rotate() {
+                $('.rotateMe').css({ WebkitTransform: 'rotate(' + deg + 'deg)' });
+                deg++;
+            }
+
+            $('#btnAnimate').click(function () {
+                //                $("#div1").animate({
+                //                    opacity: 0.25,
+                //                    height: "toggle"
+                //                }, 5000, function () {
+                //                    // Animation complete.
+                //                });
+
+                //   left: "+=50",
+                $("#div1").slideToggle("slow",
+                    function () { this.attr("left", 150) },
+                    function () { this.attr("left", 20) }
+                    );
+            });
+
+        });
+
+
+        window.onload = function () {
+            var dog = {};
+            dog.name = "fido";
+            dog.weight = 28;
+
+            jsonDog = JSON.stringify(dog);
+
+            var dog1 = {
+                name: "fido",
+                weight: 5,
+                bark: function () { return this.name + " says Woof!"; }
+            }
+
+            var dog2 = {
+                name: "Sparky",
+                weight: 10,
+                bark: function () { return this.name + " says Woof!"; }
+            }
+
+            var dog3 = {
+                name: "Rover",
+                weight: 20,
+                bark: function () { return this.name + " says Woof!"; }
+            }
+
+            console.log(jsonDog);
+            console.log(dog1.bark());
+
+            var aNewDog = JSON.parse(jsonDog);
+
+
+            var dogs = [];
+
+            dogs.push(dog1);
+            dogs.push(dog2);
+            dogs.push(dog3);
+
+            for (var i = 0; i < dogs.length; i++) {
+                console.log(dogs[i].bark());
+            }
+
+
+            allDogs = JSON.stringify(dogs);
+            console.log(allDogs);
+
+            dogs.push({ "Employee Name": 'Mike', grade: 3 });
+            allDogs = JSON.stringify(dogs);
+            console.log(allDogs);
+            var otherDogs = JSON.parse(allDogs);
+            console.log(dogs[2].bark());
+
+        }
+    </script>
+</head>
+<body>
+    <div class="rotateMe">
+        Rotate me!</div>
+    <button id="btnAnimate">
+        Animate</button>
+    <div id="div1" style="background: red; width: 200px; height: 200px; position: relative">
+        Hello World</div>
+</body>
+</html>

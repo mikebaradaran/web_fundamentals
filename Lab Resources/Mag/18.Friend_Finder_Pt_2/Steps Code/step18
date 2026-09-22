@@ -1,0 +1,17 @@
+			$db = mysql_connect("localhost", "friendfinder", "dbpassword") or die("ERROR: unable to connect to the database server.");
+			mysql_select_db("friendfinder",$db) or die("ERROR: unable to connect to the database.");
+				
+			$sql = "select users.firstname as name, latitude, longitude from users where userid in (select userid from friends where friendid = $_POST[userid])";
+			$result = mysql_query($sql) or die("ERROR: unable to query the database. <!--".$sql."-->");
+			echo ("{");
+			while ($row = mysql_fetch_array($result)) {
+				echo("
+					{
+					 "friend": {
+						"name": "$row[name]",
+						"lat": "$row[latitude]",
+						"lon": "$row[longitude]",					
+					}
+				");			
+			}
+			echo ("}");

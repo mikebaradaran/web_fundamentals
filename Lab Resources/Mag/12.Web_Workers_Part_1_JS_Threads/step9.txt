@@ -1,0 +1,9 @@
+//code//
+onmessage = handleMessage;
+
+function handleMessage(evt) {
+    var data = evt.data;
+    if (data = "ping") {
+        postMessage("pong");
+    }
+}

@@ -1,0 +1,15 @@
+//code//
+var count = 0;
+onmessage = handleMessage;
+
+function handleMessage(evt) {
+    var data = evt.data;
+    if (data = "ping") {
+        sendMessage();
+    }
+}
+
+function sendMessage() {
+    postMessage("pong " + count++);
+    setTimeout("sendMessage()", 2500);
+}

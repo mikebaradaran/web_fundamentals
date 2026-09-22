@@ -1,0 +1,3 @@
+	input:invalid { background: #efdee0 url(invalid.png) no-repeat center right; }
+	input:valid { background: #f3f8ed url(valid.png) no-repeat center right; }	
+	

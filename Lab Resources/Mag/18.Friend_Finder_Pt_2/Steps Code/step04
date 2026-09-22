@@ -1,0 +1,5 @@
+			function useposition(position){  
+				lat = position.coords.latitude;
+				lon = position.coords.longitude;   
+				$("#location").html('Lat: ' + lat + '<br />Lon: ' + lon);
+			}

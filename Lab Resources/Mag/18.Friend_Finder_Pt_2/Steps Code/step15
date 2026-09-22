@@ -1,0 +1,5 @@
+		$("#loginbtn").click(function(){
+			$.post("http://yourserver.com/login.php", { username: $("#username").val(), password: $("#password").val() }, function(data) {
+   				localStorage.setItem("userid", data)
+			});
+		});

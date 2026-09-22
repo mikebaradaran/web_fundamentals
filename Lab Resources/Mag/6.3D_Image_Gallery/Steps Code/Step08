@@ -1,0 +1,42 @@
+	#container ul.thumblinks {
+		position:	relative;
+		margin:		0;
+		padding:	0;	
+		margin-top:	20px;
+	}
+	
+	#container ul.thumblinks li {
+		list-style:	none;
+		padding:	0;
+		margin:		0;
+		display:	inline-block;
+		width:		20px;
+		height:		20px;
+		overflow:	hidden;
+		margin-right:5px;
+		-webkit-border-radius:10px;
+		border-radius:10px;
+		border-right:	1px solid #fff;
+		border-bottom:	1px solid #fff;
+		border-top:		1px solid #aaa;
+		border-left:	1px solid #aaa;
+		background:		rgba(0,0,0,0.01);
+		text-align:		center;
+	}
+		
+	#container ul.thumblinks li a {
+		display:	block;
+		overflow:	hidden;
+		width:		16px;
+		height:		16px;	
+		text-indent:-10000px;
+		text-decoration:none;
+		-webkit-border-radius:8px;
+		border-radius:8px;
+		margin-top:	2px;
+		margin-left: 2px;
+	}
+	
+	#container ul.thumblinks li a:hover, #container ul.thumblinks li a.selected  {
+		background:	rgba(0,0,0,0.8);
+	}

@@ -1,0 +1,1 @@
+$.post("http://yourserver.com/getfriendlocations.php", { userid: localStorage.getItem("userid") });

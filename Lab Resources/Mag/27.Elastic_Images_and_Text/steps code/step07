@@ -1,0 +1,11 @@
+	$(document).ready(function(){
+		maxwidth = 1200;
+		minwidth = 480;
+		// Add your interactive code here
+		$(window).resize(function(){
+			width = parseInt($(this).width());
+			if (width<minwidth) width=minwidth;
+			if (width>maxwidth) width=maxwidth;
+			pfontsize = parseFloat((width/minwidth))+"em";
+			$("article p.intro").css({fontSize:pfontsize});
+		});

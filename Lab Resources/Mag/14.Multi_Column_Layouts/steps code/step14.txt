@@ -1,0 +1,12 @@
+	article aside {
+		position:			relative;
+		display:			block;
+		font-size:			2.2em;
+		line-height:		1.8em;
+		font-style:			italic;
+		-webkit-column-span:all;
+		column-span:		all;
+		border-top:			2px solid #333;
+		border-bottom:		2px solid #333;
+		margin-bottom:		20px;
+	}

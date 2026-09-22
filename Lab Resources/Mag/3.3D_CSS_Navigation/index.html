@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3D Navigation with CSS3 and Meny.JS</title>
+		<link rel="stylesheet" href="styles/screen.css" type="text/css" />
+		<script type="text/javascript" src="scripts/meny.js"></script>
+	</head>
+	<body>
+		<div class="menu">
+			<nav>
+				<div id="handle"><div class="downarrow"></div></div>
+				<ul>
+					<li><a href="#" title="Click here to..." class="active">HOME</a></li>
+					<li><a href="#" title="Click here to...">OUR WORK</a></li>
+					<li><a href="#" title="Click here to...">WHO WE DO IT FOR</a></li>
+					<li><a href="#" title="Click here to...">BLOG</a></li>
+					<li><a href="#" title="Click here to...">CONTACT US</a></li>
+				</ul>
+			</nav>	
+		</div>
+		<div class="container">
+			<header>
+				<section id="accent">
+					<div id="logo">
+						<h1>Creative Results</h1>
+						<p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed </p>
+						<a class="calltoaction" title="Click here to...">SEE WHAT WE CAN DO FOR YOU</a>
+					</div>
+					<img class="accentimage" src="images/polaroids.png" width="500" height="336" alt="Some photos" />
+				</section>
+			</header>
+			<article>
+				<section class="box1">
+					<h2>// HEADING ONE</h2>
+					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+					<a class="calltoaction" title="Click here to...">FIND OUT MORE</a>
+				</section>
+				<section class="box2">
+					<h2>// HEADING TWO</h2>
+					<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+					<a class="calltoaction" title="Click here to...">FIND OUT MORE</a>				
+				</section>
+				<section class="box3">
+					<h2>// GET IN TOUCH</h2>
+					<p>We love to talk by phone, email or even face to face over coffee. If you like what you see here, please contact us to discuss your project further: <a href="mailto:sales@yourdomain.com" title="click here to send us an email">sales@yourdomain.com</a></p>
+				</section>
+				<p class="lastword">&nbsp;</p>
+			</article>
+			<footer>
+				&copy; 2012 YOUR COMPANY LIMITED. ALL RIGHTS RESERVED. E&OE
+			</footer>
+		</div>
+		<script>
+			var meny = Meny.create({
+				menuElement: document.querySelector( '.menu' ),
+				contentsElement: document.querySelector( '.container' ),
+				position: 'top',
+				height: 50
+			});
+		</script>		
+	</body>
+</html>

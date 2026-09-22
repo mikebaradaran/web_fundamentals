@@ -1,0 +1,8 @@
+				winheight=parseInt($(window).height());
+				winwidth=parseInt($(window).width());
+				if((winwidth/16*9)<winheight) {
+					$("#bottom img").css({height:winheight});
+				} else {
+					
+					$("#bottom img").css({width:winwidth});
+				}

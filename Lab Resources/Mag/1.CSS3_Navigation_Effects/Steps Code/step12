@@ -1,0 +1,4 @@
+ul#nav li:hover .icon {
+	-webkit-transform: scale(1.5);
+	color:			#b7480c;
+}

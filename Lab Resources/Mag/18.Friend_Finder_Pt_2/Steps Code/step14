@@ -1,0 +1,7 @@
+var marker = $('#map').gmap('get', 'markers > client' );
+				if ( !marker ) {
+					$('#map').gmap('addMarker', { 'id': 'client', 'position': deviceposition, 'bounds': true });
+				} else {
+					 marker.setPosition(deviceposition);
+				}
+				themap.panTo(deviceposition);

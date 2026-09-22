@@ -1,0 +1,1 @@
+$('#map').gmap('addMarker', { 'id': 'client', 'position': deviceposition, 'bounds': true });

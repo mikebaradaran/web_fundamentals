@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>3D CSS3 Gallery</title>
+		<link href="styles/screen.css" type="text/css" rel="stylesheet" />
+		<script src="scripts/jquery.js"></script>
+		<script>
+		
+		</script>
+	</head>
+	<body>
+		<div id="stage">
+		<div id="rotate">
+			<div id="container">
+				<h1>3D CSS3 SLIDESHOW</h1>
+				<ul class="thumbnails">
+					<li id="img1"><img src="images/small/1.jpg" rel="images/large/1.jpg" width="600" height="338" alt="Photo 1" /><span>On the beach...</span></li>
+					<li id="img2"><img src="images/small/2.jpg" rel="images/large/2.jpg" width="600" height="338" alt="Photo 2" /><span>In your home...</span></li>
+					<li id="img3"><img src="images/small/3.jpg" rel="images/large/3.jpg" width="600" height="338" alt="Photo 3" /><span>Red shoes...</span></li>
+					<li id="img4"><img src="images/small/4.jpg" rel="images/large/4.jpg" width="600" height="338" alt="Photo 4" /><span>And blue laces</span></li>
+					<li id="img5"><img src="images/small/5.jpg" rel="images/large/5.jpg" width="600" height="338" alt="Photo 5" /><span>Tied up tight</span></li>
+				</ul>
+				<ul class="thumblinks">
+					<li><a href="#img1" class="selected">Image 1</a></li>
+					<li><a href="#img2">Image 2</a></li>
+					<li><a href="#img3">Image 3</a></li>
+					<li><a href="#img4">Image 4</a></li>
+					<li><a href="#img5">Image 5</a></li>
+				</ul>
+			</div>
+			<div id="bottom">
+				<img src="images/large/1.jpg" width="1920" height="1200" alt="Image 1" />
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
